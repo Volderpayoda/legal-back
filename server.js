@@ -39,3 +39,25 @@ app.get("/ordenanzas/:id", function (req, res, next) {
     res.json(found);
 
 });
+
+app.delete("/ordenanzas/:id", function(req, res, next) {
+    var _id = req.params._id;
+
+    var i = ordenanzas.findIndex(function(ordenanza){
+        ordenanza._id == _id;
+    })
+
+    ordenanzas.splice(i, 1);
+    res.status(201);
+})
+
+app.put("/ordenanzas/:id", function(req, res, next) {
+    var _id = req.params._id;
+
+    var i = ordenanzas.findIndex(function(ordenanza){
+        ordenanza._id == _id;
+    })
+
+    ordenanzas.splice(i, 1);
+    res.status(201);
+})
