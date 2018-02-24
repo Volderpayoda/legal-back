@@ -1,31 +1,34 @@
 var express = require("express");
+var bodyParser = require("body-parser");
+
+var datos = require("./datos");
 
 var app = express();
 
-var bodyParser = require("body-parser");
-
 app.use(bodyParser.json());
 
-app.listen(80, function () {
-    console.log("Servidor iniciado");
-});
-
-var ordenanzas = []; //reemplazar con archivo de bd
 app.get("/ordenanzas", function(req,res,next){
-    res.json(ordenanzas);
+    datos.ordenanzas.selectAll(function(err, ordenanzas){
+        if (err) {
+            next(err);
+            return;
+        }
+        res.json(ordenanzas)
+    })
 })
 
-var seq = 0; //sacar
-
 app.post("/ordenanzas", function (req, res, next) {
-    var _id = "ID" + seq++;
-
     var ordenanza = req.body;
-    ordenanza._id = _id;
-    ordenanzas.push(ordenanza);
-
-    res.status(201).json({
+    datos.ordenanzas.insert(ordenanza, function(err, _id){
+        if (err) {
+            next(err);
+            return;
+        }
+        res.status(201).json({
         _id: _id
+        })
+    })
+
     });
 }); //alta ordenanza, consulta sql
 
@@ -60,4 +63,8 @@ app.put("/ordenanzas/:id", function(req, res, next) {
 
     ordenanzas.splice(i, 1);
     res.status(201);
-})
+}) 
+
+app.listen(80, function () {
+    console.log("Servidor iniciado");
+});
