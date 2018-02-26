@@ -14,10 +14,15 @@ module.exports = {
             callback(null, _id);
         },
         select: function(_id, callback) {
-            var encontrado = ordenanzas.find(function(ordenanza){
-                return ordenanza._id = _id;
+            var encontrados = ordenanzas.filter(function(ordenanza){
+                return ordenanza._id === _id;
             });
-            callback(null, encontrado);
+
+            if(!encontrados.length) {
+                callback(null,null);
+                return;
+            }
+            callback(null, encontrados[0]);
         },
         //TODO: delete
 
