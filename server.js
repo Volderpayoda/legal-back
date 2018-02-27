@@ -10,5 +10,5 @@ app.use(bodyParser.json());
 app.use("/ordenanzas", ordenanzas);
 
 app.listen(80, function () {
-    console.log("Servidor iniciado");
+    console.log("Servidor iniciado 2");
 });
