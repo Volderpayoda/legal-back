@@ -8,11 +8,21 @@ $stateProvider
         })
         .state('ordenanzas', {
                 url: '/ordenanzas',
-                controller:"ordenanzas-ctrl",
-                templateUrl: 'templates/ordenanzas.html'
+                templateUrl: 'templates/ordenanzas.html',
+                controller:"ordenanzas-ctrl"
+                
                 
             })
         ;
 
     $urlRouterProvider.otherwise('/home');
+});
+
+app.controller("ordenanzas-ctrl", function($scope, $http) {
+   $http.get("http://localhost:80/api/ordenanzas")
+    .then(function(response){
+        $scope.ordenanzas = response.data; 
+    }, function(response){
+        $scope.ordenanzas = "algo fallo";
+    });
 });
