@@ -37,7 +37,7 @@ function queryPg(query, callback) {
 module.exports = {
     ordenanzas: {
         selectAll: function (callback) {
-            queryPg("select * from ordenanzas", function(err, resultś) {
+            queryPg("select * from ordenanzas", function(err, results) {
                 if (err) {
                     callback(err);
                     return;
