@@ -9,13 +9,15 @@
         <th>Fecha promulgación</th>
         <th>N° Promulgación</th>
         <th>Observación </th>
+        <th>Número de Actuación Simple</th>
     </tr>
     <tr ng-repeat="ordenanza in ordenanzas">
         <td>{{ ordenanza.numero }}</td>
         <td>{{ ordenanza.tema }}</td>
         <td>{{ ordenanza.estado }}</td>
         <td>{{ ordenanza.fechaPromulgacion }}</td>
-        <td>{{ ordenanza.numPromulgacion }}</td>
+        <td>{{ ordenanza.nroPromulgacion }}</td>
         <td>{{ ordenanza.observacion }}</td>
+        <td>{{ ordenanza.nroActSimple }}</td>
     </tr>
 </table>
