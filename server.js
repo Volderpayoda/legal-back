@@ -8,7 +8,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
-app.use("/ordenanzas", ordenanzas);
+app.use("/api/ordenanzas", ordenanzas);
 
 app.use(express.static(path.join(__dirname, "public")));
 

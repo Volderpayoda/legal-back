@@ -15,9 +15,13 @@
 
 -->
 <h1>Listado de ordenanzas</h1>
-<table>
-    <!--<tr ng-repeat="ordenanza in ordenanzas">
-        <td>{{ ordenanza.numero }}</td>
-        <td>{{ ordenanza.estado }}</td>
-    </tr>-->
+<table class="table">
+    <tr>
+        <th>Numero de ordenanza</th>
+        <th>Descripción</th>
+    </tr>
+    <tr ng-repeat="ordenanza in ordenanzas">
+        <td>{{ ordenanza._id }}</td>
+        <!--<td>{{ ordenanza.estado }}</td> -->
+    </tr>
 </table>
