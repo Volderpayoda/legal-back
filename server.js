@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 var ordenanzas = require("./ordenanzas");
 
@@ -9,6 +10,8 @@ app.use(bodyParser.json());
 
 app.use("/ordenanzas", ordenanzas);
 
-app.listen(80, function () {
+app.use(express.static(path.join(__dirname, "public")));
+
+app.listen(8080, function () {
     console.log("Servidor iniciado 2");
 });
