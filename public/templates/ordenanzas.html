@@ -1,28 +1,21 @@
-<!--<div ng-controller="ordenanzas-ctrl">
-  <div ng-repeat="ordenanza in ordenanzas" class="col-md-6">
-      <table class"table table-bordered">
-        <tr>
-          <th>Numero de ordenanza</th>
-          <th>Fecha</th>
-          <th>Estado</th>
-        </tr>
-        <tr>
-          <td class="numeroOrdenanza"> {{ordenanza.numero}}</td>
-        </tr>
-    </table> 
-  </div>
-</div>
 
--->
 <h1>Listado de ordenanzas</h1>
 
 <table class="table">
     <tr>
-        <th>Numero de ordenanza</th>
-        <th>Descripción</th>
+        <th>N° de ordenanza</th>
+        <th>Tema</th>
+        <th>Estado</th>
+        <th>Fecha promulgación</th>
+        <th>N° Promulgación</th>
+        <th>Observación </th>
     </tr>
     <tr ng-repeat="ordenanza in ordenanzas">
-        <td>{{ ordenanza._id }}</td>
-        <!--<td>{{ ordenanza.estado }}</td>-->
+        <td>{{ ordenanza.numero }}</td>
+        <td>{{ ordenanza.tema }}</td>
+        <td>{{ ordenanza.estado }}</td>
+        <td>{{ ordenanza.fechaPromulgacion }}</td>
+        <td>{{ ordenanza.numPromulgacion }}</td>
+        <td>{{ ordenanza.observacion }}</td>
     </tr>
 </table>
