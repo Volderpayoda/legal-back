@@ -1,17 +1,16 @@
 var express = require("express");
 
-var datos = require("./datos");
+var db = require("../db/index,js");
 
 var router = express.Router();
 
 router.get("/", function(req,res,next){
-    datos.ordenanzas.selectAll(function(err, ordenanzas){
-        if (err) {
-            next(err);
-            return;
-        }
-        res.json(ordenanzas)
-    })
+  db.query("select * from ordenanzas", function(err, res) {
+    if(err) {
+      return next(err);
+    }
+    res.send(res.rows);
+  })
 })
 
 router.post("/", function (req, res, next) {

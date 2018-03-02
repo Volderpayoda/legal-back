@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 
-var ordenanzas = require("./ordenanzas");
+var ordenanzas = require("./routes/ordenanzas");
 
 var app = express();
 
