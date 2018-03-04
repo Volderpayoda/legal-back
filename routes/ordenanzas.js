@@ -4,7 +4,7 @@ var db = require("../db/index.js");
 
 var router = express.Router();
 
-router.get("/", function(req,res,next){
+router.get("/", function(req, res, next){
   db.query("select * from ordenanzas", function(err, results) {
     if(err) {
       return next(err);
@@ -14,17 +14,19 @@ router.get("/", function(req,res,next){
 })
 
 router.post("/", function (req, res, next) {
+    console.log(req.body);
     var ordenanza = req.body;
     console.log(ordenanza);
-    db.query("insert into ordenanzas(nroOrdenanza, tema, promulgacion, fechaPromulgacion, nroPromulgacion, observacion, nroActSimple, presento, origen, reglamentada) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada], function(err, results){
-        if (err) {
-            next(err);
-            return;
-        }
-        res.status(201).json({
-        results: results
-        })
-    })
+    res.status(201);
+    //db.query("insert into ordenanzas(nroOrdenanza, tema, promulgacion, fechaPromulgacion, nroPromulgacion, observacion, nroActSimple, presento, origen, reglamentada) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada], function(err, results){
+    //    if (err) {
+    //        next(err);
+    //        return;
+    //    }
+    //    res.status(201).json({
+    //    results: results
+    //    })
+  //  })
 });
 
 router.get("/:id", function (req, res, next) {
