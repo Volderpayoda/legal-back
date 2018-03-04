@@ -37,10 +37,9 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
 app.controller("altaOrdenanzasCtrl", function($scope, $http) {
     $scope.ordenanza.nroOrdenanza=null;
     $scope.ordenanza.tema=null;
-    $scope.ordenanza.promulgacion=null;
     
     $scope.postdata = function(ordenanza) {
-    var data = {"nroOrdenanza": ordenanza.nroOrdenanza, "tema": ordenanza.tema, "promulgacion": ordenanza.promulgacion}
+    var data = {"nroOrdenanza": ordenanza.nroOrdenanza, "tema": ordenanza.tema}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(response) {
         if (response.data) $scope.msg = "exito";
     }, function(response){

@@ -1,5 +1,5 @@
 <h1>Añadir ordenanza</h1>
-<div>
+<!--<div>
     <form id="form-alta" class="" name="form-alta" action="#" novalidate>
         <fieldset>
             <div class="form-group">
@@ -58,9 +58,18 @@
             </div>         
         </fieldset>
     </form>
+</div>-->
+
+<div> 
+    Numero Ordenanza: <input ng-model="ordenanza.nroOrdenanza"/><br/><br/>
+    Tema <input ng-model="ordenanza.tema"/><br/><br/>
+    <input type="button" value="Send" ng-click="postdata(ordenanza)"/>
 </div>
 
-   <!-- <ul ng-model="ordenanza">
-        <input type="text" ng-model="ordenanza.nroOrdenanza">NúmeroDeOrdenanza: {{ordenanza.nroOrdenanza}}
-    </ul>-->
-</div>
+<p>Output Message : {{msg}}</p>
+
+<p>StatusCode: {{statusval}}</p>
+
+<p>Status: {{statustext}}</p>
+
+<p>Response Headers: {{headers}}</p>
