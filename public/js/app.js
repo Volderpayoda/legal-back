@@ -35,7 +35,8 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
 });
 
 app.controller("altaOrdenanzasCtrl", function($scope, $http) {
-    var data = {"nroOrdenanza":"nroOrdenanza"}
+    $scope.submit = function() {
+    var data = {"nroOrdenanza":$scope.ordenanza.nroOrdenanza}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data),{
         headers: {
             'Content-Type': 'application/json'
@@ -44,6 +45,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
                ).success(function(data) {
         $scope.ordenanza = data
     });
+    }
 });
             
     
