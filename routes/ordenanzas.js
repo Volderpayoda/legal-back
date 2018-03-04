@@ -7,7 +7,6 @@ var router = express.Router();
 router.get("/", function(req,res,next){
   db.query("select * from ordenanzas", function(err, res) {
     if(err) {
-        console.log("error de consulta");
       return next(err);
     }
     console.log(res.rows);
