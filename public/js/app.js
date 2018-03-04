@@ -32,3 +32,7 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
         $scope.ordenanzas = "algo fallo";
     });
 });
+
+app.controller("altaOrdenanzasCtrl", function($scope){
+    $scope.update=angular.copy.ordenanza;
+})
