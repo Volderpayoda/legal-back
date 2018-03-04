@@ -5,12 +5,12 @@ var db = require("../db/index.js");
 var router = express.Router();
 
 router.get("/", function(req,res,next){
-  db.query("select * from ordenanzas", function(err, res) {
+  db.query("select * from ordenanzas", function(err, resp) {
     if(err) {
       return next(err);
     }
-    console.log(res.rows);
-    res.json(res.rows);
+    console.log(resp.rows);
+    res.json(resp.rows);
   })
 })
 
