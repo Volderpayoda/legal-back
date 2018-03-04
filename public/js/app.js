@@ -16,7 +16,7 @@ $stateProvider
         .state('alta-ordenanzas', {
                     url: '/alta-ordenanzas',
                     templateUrl: 'templates/alta-ordenanzas.html',
-                    controller:'altaOrdenanzasCtrl'
+                    controller:"altaOrdenanzasCtrl"
 
 
                 })
@@ -44,8 +44,6 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
                ).success(function(data) {
         $scope.ordenanza = data
     });
-}
+});
             
-        })
-    }
-})
+    
