@@ -4,7 +4,7 @@ var db = require("../db/index.js");
 
 var router = express.Router();
 
-router.get("/", function(req,res,next){
+router.get("/", function(req, res, next){
   db.query("select * from ordenanzas", function(err, results) {
     if(err) {
       return next(err);
@@ -14,6 +14,7 @@ router.get("/", function(req,res,next){
 })
 
 router.post("/", function (req, res, next) {
+    console.log(req.body);
     var ordenanza = req.body;
     console.log(ordenanza);
     res.status(201);
