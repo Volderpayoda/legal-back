@@ -15,3 +15,4 @@ app.use(express.static(path.join(__dirname, "public")));
 app.listen(80, function () {
     console.log("Servidor iniciado");
 });
+console.log(PGUSER);
