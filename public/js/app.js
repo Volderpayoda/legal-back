@@ -39,7 +39,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
     $scope.tema=null;
     
     $scope.postdata = function(nroOrdenanza,tema) {
-    var data = {"nroOrdenanza": ordenanza.nroOrdenanza, "tema": ordenanza.tema}
+    var data = {nroOrdenanza: nroOrdenanza, tema: tema}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(response) {
         if (response.data) $scope.msg = "exito";
     }, function(response){
