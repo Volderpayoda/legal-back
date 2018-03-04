@@ -61,9 +61,9 @@
 </div>-->
 
 <div> 
-    Numero Ordenanza: <input ng-model="nroOrdenanza"/><br/><br/>
-    Tema <input ng-model="tema"/><br/><br/>
-    <input type="button" value="Send" ng-click="postdata(nroOrdenanza,tema)"/>
+    Numero Ordenanza: <input ng-model="ordenanza.nroOrdenanza"/><br/><br/>
+    Tema <input ng-model="ordenanza.tema"/><br/><br/>
+    <input type="button" value="Send" ng-click="postdata(ordenanza)"/>
 </div>
 
 <p>Output Message : {{msg}}</p>
