@@ -10,7 +10,7 @@ router.get("/", function(req,res,next){
       return next(err);
     }
     console.log(res.rows);
-    res.send(res.rows);
+    res.json(res.rows);
   })
 })
 
