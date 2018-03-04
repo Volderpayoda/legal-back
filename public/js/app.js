@@ -36,7 +36,7 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
 
 app.controller("altaOrdenanzasCtrl", function($scope, $http) {
     $scope.msg = "aca"
-    $scope.nroOrdenanza=null;
+    /*$scope.nroOrdenanza=null;
     $scope.tema=null;
     $scope.postdata = function(nroOrdenanza,tema) {
     var data = {nroOrdenanza: nroOrdenanza, tema: tema}
@@ -46,7 +46,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         $scope.msg="no exito";
         
     });
-    }
+    }*/
     });
             
     
