@@ -33,6 +33,11 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
     });
 });
 
-app.controller("altaOrdenanzasCtrl", function($scope){
-    $scope.update=angular.copy.ordenanza;
+app.controller("altaOrdenanzasCtrl", function($scope, $http) {
+    $scope.submit = function() {
+        $http.post('http://volderpayoda.sytes.net/api/ordenanzas',$scope.ordenanza)
+            .then(function(response){
+            
+        })
+    }
 })
