@@ -34,9 +34,16 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
 });
 
 app.controller("altaOrdenanzasCtrl", function($scope, $http) {
-    $scope.submit = function() {
-        $http.post('http://volderpayoda.sytes.net/api/ordenanzas',$scope.ordenanza)
-            .then(function(response){
+    var data = {"nroOrdenanza":"nroOrdenanza"}
+    $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data),{
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+               ).success(function(data) {
+        $scope.ordenanza = data
+    });
+}
             
         })
     }
