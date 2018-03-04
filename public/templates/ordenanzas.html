@@ -1,23 +1,29 @@
+<h1>Listado de Ordenanzas</h1>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Número de Actuación Simple</th>
+            <th>N° de Ordenanza</th>
+            <th>Tema</th>
+            <th>Promulgación</th>
+            <th>Fecha de Promulgación</th>
+            <th>N° de Resolución de Promulgación</th>
+            <th>Reglamentada</th>
+            <th>Observación </th>
+            <th>Origen</th>
 
-<h1>Listado de ordenanzas</h1>
+        </tr>
+        <tr ng-repeat="ordenanza in ordenanzas">
+            <td>{{ ordenanza.nroActSimple }}</td>
+            <td>{{ ordenanza.nroOrdenanza }}</td>
+            <td>{{ ordenanza.tema }}</td>
+            <td>{{ ordenanza.promulgada }}</td>
+            <td>{{ ordenanza.fechaPromulgacion }}</td>
+            <td>{{ ordenanza.nroPromulgacion }}</td>
+            <td>{{ ordenanza.reglamentada }}</td>
+            <td>{{ ordenanza.observacion }}</td>
+            <td>{{ ordenanza.origen }}</td>
 
-<table class="table">
-    <tr>
-        <th>N° de ordenanza</th>
-        <th>Tema</th>
-        <th>Estado</th>
-        <th>Fecha promulgación</th>
-        <th>N° Promulgación</th>
-        <th>Observación </th>
-        <th>Número de Actuación Simple</th>
-    </tr>
-    <tr ng-repeat="ordenanza in ordenanzas">
-        <td>{{ ordenanza.nroOrdenanza }}</td>
-        <td>{{ ordenanza.tema }}</td>
-        <td>{{ ordenanza.estado }}</td>
-        <td>{{ ordenanza.fechaPromulgacion }}</td>
-        <td>{{ ordenanza.nroPromulgacion }}</td>
-        <td>{{ ordenanza.observacion }}</td>
-        <td>{{ ordenanza.nroActSimple }}</td>
-    </tr>
-</table>
+        </tr>
+    </table>
+</div>
