@@ -35,17 +35,21 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
 });
 
 app.controller("altaOrdenanzasCtrl", function($scope, $http) {
-    $scope.submit = function() {
-    var data = {"nroOrdenanza":$scope.ordenanza.nroOrdenanza}
-    $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data),{
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-               ).success(function(data) {
-        $scope.ordenanza = data
+    $scope.ordenanza.nroOrdenanza=null;
+    $scope.ordenanza.tema=null;
+    $scope.ordenanza.promulgacion=null;
+    
+    $scope.postdata = function(ordenanza) {
+    var data = {"nroOrdenanza": ordenanza.nroOrdenanza, "tema": ordenanza.tema, "promulgacion": ordenanza.promulgacion}
+    $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(response) {
+        if (response.data) $scope.msg = "exito";
+    }, function(response){
+        $scope.msg="no exito";
+        $scope.statusval = response.status;
+        $scope.statustext= response.statusText;
+        $scope.headers = response.headers();
     });
     }
-});
+    });
             
     
