@@ -1,41 +1,61 @@
 <h1>Añadir ordenanza</h1>
-<form id="form-alta" class="" name="form-alta" action="#">
-    <fieldset>
-        <div class="form-group">
-            <div class="class-md-6">
-                <label class="control-label" for="nroOrdenanza">Número de Ordenanza: </label>
-                <input name="numOrdenanza" class="form-control" placeholder="Ejemplo: 12.638" type="text">
+<div ng-controller="altaOrdenanzasCtrl">
+    <form id="form-alta" class="" name="form-alta" action="#" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <div class="class-md-6">
+                    <label class="control-label" for="nroOrdenanza">Número de Ordenanza: </label>
+                    <input name="numOrdenanza" class="form-control" placeholder="Ejemplo: 12.638" type="text" ng-model="ordenanza.nroOrdenanza">
+                </div>
+                <div class="class-md-6">
+                    <label class="control-label" for="tema">Tema: </label>
+                    <input name="tema" class="form-control" placeholder="N caracteres" type="text" ng-model="ordenanza.tema">
+                </div>
+                <div class="class-md-6">
+                    <label class="control-label" for="promulgacion">Promulgación: </label>
+                    <input name="promulgacion" class="form-control" type="radio" ng-model="ordenanza.promulgación" value="Sí"> Sí 
+                    <input name="promulgacion" class="form-control" type="radio" ng-model="ordenanza.promulgación" value="No">No
+                </div>
+                <div class="class-md-6">
+                    <label class="control-label" for="fechaPromulgacion">Fecha: </label>
+                    <input type='text' ng-model="ordenanza.fechaPromulgacion" class="form-control" />
+                    <span class="input-group-addon">
+                    </span>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker1').datetimepicker();
+                        });
+                </script>
+                <div class="class-md-6">
+                    <label class="control-label" for="nroPromulgacion">Número de promulgación: </label>
+                    <input name="nroPromulgacion" class="form-control" placeholder="Ejemplo: N°0623" type="text" ng-model="ordenanza.nroPromulgacion">
+                </div>
+                <div class="class-md-6">
+                    <label class="control-label" for="observacion">Observación: </label>
+                    <input name="observacion" class="form-control" placeholder="N caracteres" type="text" ng-model="ordenanza.observacion">
+                </div>    
+                 <div class="class-md-6">
+                    <label class="control-label" for="nroActSimple">Número de Actuación Simple: </label>
+                    <input name="nroActSimple" class="form-control" placeholder="Ejemplo: " type="text" ng-model="ordenanza.nroActSimple">
+                </div>
+                <div class="class-md-6">
+                    <label class="control-label" for="origen">Presentó: </label>
+                    <input name="estado" class="form-control" type="radio" ng-model="ordenanza.origen" value="Ejecutivo"> Ejecutivo 
+                    <input name="estado" class="form-control" type="radio" ng-model="ordenanza.origen" value="Legistlativo">Legistlativo
+                </div>
+                <div class="class-md-6">
+                    <label class="control-label" for="reglamentada">Reglamentada: </label>
+                    <input name="reglamentada" class="form-control" type="radio" ng-model="ordenanza.reglamentada" value="Sí"> Sí 
+                    <input name="reglamentada" class="form-control" type="radio" ng-model="ordenanza.reglamentada" value="No">No
+                </div>
             </div>
-            <div class="class-md-6">
-                <label class="control-label" for="tema">Tema: </label>
-                <input name="tema" class="form-control" placeholder="N caracteres" type="text">
-            </div>
-            <div class="class-md-6">
-                <label class="control-label" for="estado">ESTADO: </label>
-                <input name="estado" class="form-control" placeholder="Slater" type="text">
-            </div>
-            <div class="class-md-6">
-                <label class="control-label" for="fechaPromulgacion">Fecha: </label>
-                <input name="fechaPromulgacion" class="form-control" placeholder="Slater" type="text">
-            </div>
-            <div class="class-md-6">
-                <label class="control-label" for="nroPromulgacion">Número de promulgación: </label>
-                <input name="nroPromulgacion" class="form-control" placeholder="Ejemplo: N°0623" type="text">
-            </div>
-            <div class="class-md-6">
-                <label class="control-label" for="observacion">Observación: </label>
-                <input name="observacion" class="form-control" placeholder="N caracteres" type="text">
-            </div>    
-             <div class="class-md-6">
-                <label class="control-label" for="nroActSimple">Número de Actuación Simple: </label>
-                <input name="nroActSimple" class="form-control" placeholder="Ejemplo: " type="text">
-            </div>            
-        </div>
-        <p></p>
-        <div class="form-group">
-            <div class="col-md-12">
-              <button type="button" class="btn btn-primary btn-lg btn-block info">Añadir</button>
-            </div>
-        </div>         
-    </fieldset>
-</form>
+            <p></p>
+            <div class="form-group">
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-primary btn-lg btn-block info">Añadir</button>
+                </div>
+            </div>         
+        </fieldset>
+    </form>
+</div>
