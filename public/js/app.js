@@ -41,12 +41,10 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
     $scope.postdata = function(nroOrdenanza,tema) {
     var data = {nroOrdenanza: nroOrdenanza, tema: tema}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(response) {
-        if (response.data) $scope.msg = "exito";
+     $scope.msg = "exito";
     }, function(response){
         $scope.msg="no exito";
-        $scope.statusval = response.status;
-        $scope.statustext= response.statusText;
-        $scope.headers = response.headers();
+        
     });
     }
     });
