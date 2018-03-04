@@ -9,8 +9,7 @@ router.get("/", function(req,res,next){
     if(err) {
       return next(err);
     }
-    console.log(resp.rows);
-    res.json(resp.rows);
+    res.json(resp);
   })
 })
 
