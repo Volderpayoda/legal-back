@@ -1,5 +1,5 @@
 <h1>Añadir ordenanza</h1>
-<div ng-controller="altaOrdenanzasCtrl">
+<!--<div ng-controller="altaOrdenanzasCtrl">
     <form ng-submit="submit()" id="form-alta" class="" name="form-alta" action="#" novalidate>
         <fieldset>
             <div class="form-group">
@@ -58,4 +58,9 @@
             </div>         
         </fieldset>
     </form>
+</div>-->
+
+    <ul ng-model="ordenanza">
+        <li>NúmeroDeOrdenanza: {{ordenanza.nroOrdenanza}}</li>
+    </ul>
 </div>

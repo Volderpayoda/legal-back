@@ -16,6 +16,7 @@ $stateProvider
         .state('alta-ordenanzas', {
                     url: '/alta-ordenanzas',
                     templateUrl: 'templates/alta-ordenanzas.html',
+                    controller:'altaOrdenanzasCtrl'
 
 
                 })
