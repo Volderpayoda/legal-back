@@ -28,7 +28,6 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
    $http.get("http://volderpayoda.sytes.net/api/ordenanzas")
     .then(function(response){
         $scope.ordenanzas = response.data; 
-        console.log("exito");
     }, function(response){
         $scope.ordenanzas = "algo fallo";
     });
