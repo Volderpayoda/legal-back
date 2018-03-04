@@ -12,6 +12,6 @@ app.use("/api/ordenanzas", ordenanzas);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(8080, function () {
+app.listen(80, function () {
     console.log("Servidor iniciado");
 });
