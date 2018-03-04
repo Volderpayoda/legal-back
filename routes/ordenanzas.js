@@ -5,26 +5,26 @@ var db = require("../db/index.js");
 var router = express.Router();
 
 router.get("/", function(req,res,next){
-  db.query("select * from ordenanzas", function(err, resp) {
+  db.query("select * from ordenanzas", function(err, results) {
     if(err) {
       return next(err);
     }
-    res.json(resp);
+    res.json(results);
   })
 })
 
 router.post("/", function (req, res, next) {
     var ordenanza = req.body;
-    datos.ordenanzas.insert(ordenanza, function(err, _id){
+    console.log(ordenanza);
+    db.query("insert into ordenanzas(nroOrdenanza, tema, promulgacion, fechaPromulgacion, nroPromulgacion, observacion, nroActSimple, presento, origen, reglamentada) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada], function(err, results){
         if (err) {
             next(err);
             return;
         }
         res.status(201).json({
-        _id: _id
+        results: results
         })
     })
-
 });
 
 router.get("/:id", function (req, res, next) {
