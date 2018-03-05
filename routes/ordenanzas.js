@@ -13,19 +13,17 @@ router.get("/", function(req, res, next){
   })
 })
 
-router.post("/", function (req, res, next) {;
+router.post("/", function (req, res, next) {
   var ordenanza = req.body;
-  var text = 'insert into ordenanzas("nroOrdenanza", "tema", "promulgacion", "fechaPromulgacion", "nroPromulgacion", "observacion", "nroActSimple", "presento", "origen", "reglamentada") '
-  + "values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+  var text = 'insert into ordenanzas("nroOrdenanza", "tema", "promulgacion", "fechaPromulgacion", "nroPromulgacion", "observacion", "nroActSimple", "presento", "origen", "reglamentada") ' +
+  "values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
   var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada];
   db.query(text, params, function(err, results){
       if (err) {
           next(err);
           return;
       }
-      res.status(201).json({
-      results: results
-      })
+      res.sendStatus(201);
   })
 });
 
@@ -39,7 +37,7 @@ router.get("/:id", function (req, res, next) {
       return;
     }
     console.log(results);
-    res.json(results.rows[0]);  
+    res.json(results);
   })
 });
 
@@ -53,10 +51,24 @@ router.delete("/:id", function (req, res, next) {
       return;
     }
     console.log(results);
-    res.json(results);
+    res.sendStatus(201);
   })
 })
 
-// TODO: update
+router.put("/:id", function (req, res, next) {
+  var _id = req.params.id;
+  var text = 'update ordenanzas set ' + 
+      'nroOrdenanza = $1, tena = $2, promulgacion = $3, fechaPromulgacion = $4, nroPromulgacion = $5, observacion = $6, nroActSimple = $7, presento = $8, origen = $9, reglamentada = $10' + 
+      'where _id = $11';
+  var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada, _id];
+  db.query(text, params, function(err, results){
+    if (err) {
+      next(err);
+      return err;
+    }
+    console.log(results);
+    res.sendStatus(201);
+  })
+})
 
 module.exports = router;
