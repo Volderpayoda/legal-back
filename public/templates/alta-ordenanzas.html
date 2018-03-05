@@ -1,50 +1,50 @@
 <h1>Añadir ordenanza</h1>
-<form >
+<form class="formulario" align="center">
     <fieldset>
         <div class="form-horizontal">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Número de Ordenanza: </label>
                 <input class="form-control" type="text" ng-model="ordenanza.nroOrdenanza" placeholder="Ejemplo: "/>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Tema: </label>
                 <input class="form-control" type="text" ng-model="ordenanza.tema" placeholder="Ejemplo: "/>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Promulgación: </label>
-                <label><input class="form-control" type="radio" ng-model="ordenanza.promulgacion" value="Si">Si</label>
-                <label><input class="form-control" type="radio" ng-model="ordenanza.promulgacion" value="No">No</label>
+                <div><label class="radio-inline"><input type="radio" value="true" ng-model="ordenanza.promulgacion">Si</label></div>
+                <div><label class="radio-inline"><input type="radio" value="false" ng-model="ordenanza.promulgacion">No</label></div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Fecha: </label>
                 <input class="form-control" type="text" ng-model="ordenanza.fechaPromulgacion" placeholder="Ejemplo: 12/04/2017"/>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Número de Promulgación: </label>
                 <input class="form-control" type="text" ng-model="ordenanza.nroPromulgacion" placeholder="Ejemplo: "/>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Observación </label>
                 <input class="form-control" type="text" ng-model="ordenanza.observacion" placeholder="Ejemplo: "/>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Número de Actuación Simple: </label>
                 <input class="form-control" type="text" ng-model="ordenanza.nroActSimple" placeholder="Ejemplo: "/>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Presentó: </label>
-                <input class="form-control" type="radio" ng-model="ordenanza.presento" value="Ejecutivo"/>Ejecutivo
-                <input class="form-control" type="radio" ng-model="ordenanza.presento" value="Legislativo"/>Legislativo
+                <div><label class="radio-inline"><input type="radio" value="Ejecutivo" ng-model="ordenanza.presento">Ejecutivo</label></div>
+                <div><label class="radio-inline"><input type="radio" value="Legislativo" ng-model="ordenanza.presento">Legislativo</label></div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <label>Reglamentada: </label>
-                <input class="form-control" type="radio" ng-model="ordenanza.reglamentada" value="Si"/>Si
-                <input class="form-control" type="radio" ng-model="ordenanza.reglamentada" value="No"/>No
+                <div><label class="radio-inline"><input type="radio" value="true" ng-model="ordenanza.reglamentada">Si</label></div>
+                <div><label class="radio-inline"><input type="radio" value="false" ng-model="ordenanza.reglamentada">No</label></div>
             </div>
         </div>
-        
-        <div class="col-md-10">
-            <input type="button" value="Send" ng-click="postdata(ordenanza)"/> 
+        <p></p>
+        <div class="col-md-12">
+            <input class="botonEnviar" type="button" value="Enviar" ng-click="postdata(ordenanza)"/> 
         </div>
     </fieldset>
 </form>
