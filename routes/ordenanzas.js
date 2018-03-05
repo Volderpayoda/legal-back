@@ -38,7 +38,7 @@ router.get("/:id", function (req, res, next) {
         next(err);
         return;
       }
-      console.log(results.rows);
+      console.log(results);
       res.json(results.rows[0]);  
     })
 });
