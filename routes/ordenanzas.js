@@ -31,14 +31,15 @@ router.post("/", function (req, res, next) {;
 
 router.get("/:id", function (req, res, next) {
     var _id = req.params.id;
-    datos.ordenanzas.select(_id, function(err, ordenanza){
-        if (err) {
-            next(err);
-            return;
-        }
-        res.json(ordenanza);
+    var text = 'select * from ordenanzas where _id = $1';
+    var params = [_id];
+    db.query(text, params, function(err, results){
+      if (err) {
+        next(err);
+        return;
+      }
+      res.json(results.rows[0]);  
     })
-    
 });
 
 // TODO: delete
