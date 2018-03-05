@@ -20,20 +20,3 @@ img.logo-footer {
     height: 100px;
     width: auto;
 }
-
-label {
-    font-weight: normal;
-    margin-top: 15px;
-}
-
-input {
-    border: 2px solid #CCC !important;
-    height: 35px;
-    border-radius: 3px;
-    max-width: 100%
-}
-
-.form-group {
-    margin-bottom: 0;
-    text-align: left;
-}
