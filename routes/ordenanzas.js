@@ -15,8 +15,8 @@ router.get("/", function(req, res, next){
 
 router.post("/", function (req, res, next) {;
     var ordenanza = req.body;
-    var text = "insert into ordenanzas(nroOrdenanza, tema, promulgacion, fechaPromulgacion, nroPromulgacion, observacion, nroActSimple, presento, origen, reglamentada) "
-    + "values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+    var text = "insert into ordenanzas(tema, promulgacion, fechaPromulgacion, nroPromulgacion, observacion, nroActSimple, presento, origen, reglamentada) "
+    + "values ($2, $3, $4, $5, $6, $7, $8, $9, $10)";
     var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada];
     db.query(text, params, function(err, results){
         if (err) {
