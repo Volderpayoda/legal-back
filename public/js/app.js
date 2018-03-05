@@ -20,6 +20,11 @@ $stateProvider
 
 
                 })
+    .state('modif-ordenanzas', {
+                      url: '/modif-ordenanzas',
+                      templateUrl: 'templates/modif-ordenanzas.html',
+                      controller:"modifOrdenanzasCtrl"
+                  })
         .state('exito', {
                     url: '/exito',
                     templateUrl: 'templates/exito.html',
@@ -41,11 +46,15 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
 app.controller("altaOrdenanzasCtrl", function($scope, $http) {
     $scope.postdata = function(ordenanza) {
     var data = {nroOrdenanza: ordenanza.nroOrdenanza, tema: ordenanza.tema, promulgacion: ordenanza.promulgacion, fechaPromulgacion: ordenanza.fechaPromulgacion, nroPromulgacion: ordenanza.nroPromulgacion, observacion: ordenanza.observacion, nroActSimple: ordenanza.nroActSimple, presento: ordenanza.presento, reglamentada: ordenanza.reglamentada}
-    $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).success(function(data) {
-     $state.go('exito');
-    $scope.msg='exito';
+    $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).success(function(data){
+    $scope.data = "exito" //0
+    $state.go('exito')
+    
     })
-    }
-    });
-            
+   }
+ });
+
+app.controller("modifOrdenanzasCtrl", function($scope, $http) {
+   
+});
     
