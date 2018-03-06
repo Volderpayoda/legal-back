@@ -13,9 +13,9 @@ $stateProvider
                 
                 
             })
-        .state('exito', {
-                        url: '/exito',
-                        templateUrl: 'templates/exito.html'
+        .state('submit', {
+                        url: '/submit',
+                        templateUrl: 'templates/submit.html'
                     })
         .state('alta-ordenanzas', {
                     url: '/alta-ordenanzas',
@@ -58,7 +58,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         reglamentada: ordenanza.reglamentada}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(data){
     //$scope.msg = "exito";
-    $state.go('exito', reload);
+    $state.go('submit');
     
     })
    }
