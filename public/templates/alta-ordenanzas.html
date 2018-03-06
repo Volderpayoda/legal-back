@@ -41,9 +41,18 @@
                 <div><label class="radio-inline"><input type="radio" value="true" ng-model="ordenanza.reglamentada">Si</label></div>
                 <div><label class="radio-inline"><input type="radio" value="false" ng-model="ordenanza.reglamentada">No</label></div>
             </div>
+            <div class="col-md-12">
+              <label>Subsecretaría:</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                  Subsecretaría
+                </label>
+              </div>
+            </div>
         </div>
         <p></p>
-        <label>{{ msg }}</label>
         <div class="col-md-12">
             <input class="botonEnviar" ui-sref="submit" type="button" value="Enviar" ng-click="postdata(ordenanza)"/> 
             
