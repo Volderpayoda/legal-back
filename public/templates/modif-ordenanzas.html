@@ -1,9 +1,4 @@
 <h1>EL TERROR</h1>
-<form class="well form-search">
-        <label>Buscar ordenanza:</label>
-        <input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Número ordenanza...">
-        <button type="submit" class="btn" ng-click="search()">Buscar</button>
-    </form>
-<pre ng-model="result">
-  {{result}}
-</pre>
+<select ng-model="ordenanzas.nroActSimple" ng-options="nroActSimple for nroActSimple in ordenanza">
+  
+</select>

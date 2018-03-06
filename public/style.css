@@ -228,3 +228,7 @@ label {
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
+
+.checkbox-label {
+  margin-top: 5px;
+}
