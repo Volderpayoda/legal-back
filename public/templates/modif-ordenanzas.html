@@ -1,4 +1,19 @@
-<h1>EL TERROR</h1>
-<select ng-model="ordenanzas.nroActSimple" ng-options="nroActSimple for nroActSimple in ordenanza">
-  
-</select>
+<h1>Modificar ordenanza</h1>
+<p>
+  <input type="text" ng-model="ordenanza.nroActSimple">
+</p>
+
+<tr ng-repeat="ordenanza in ordenanzas | filter: ordenanza.nroActSimple">
+            <td>{{ ordenanza.nroActSimple }}</td>
+            <td>{{ ordenanza.nroOrdenanza }}</td>
+            <td>{{ ordenanza.tema }}</td>
+            <td>{{ ordenanza.promulgada }}</td>
+            <td>{{ ordenanza.fechaPromulgacion }}</td>
+            <td>{{ ordenanza.nroPromulgacion }}</td>
+            <td>{{ ordenanza.reglamentada }}</td>
+            <td>{{ ordenanza.observacion }}</td>
+            <td>{{ ordenanza.origen }}</td>
+</tr>
+<button ng-click="edit(ordenanza)">
+  Editar
+</button>

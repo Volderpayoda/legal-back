@@ -29,6 +29,11 @@ $stateProvider
                       templateUrl: 'templates/modif-ordenanzas.html',
                       controller:"modifOrdenanzasCtrl"
                   })
+  .state('editar/:nroActSimple',{
+     url:'editar/:nroActSimple', 
+    templateUrl:'templates/editar.html',
+    controller:"editar-ctrl"
+})
         
         ;
 
@@ -58,30 +63,24 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         reglamentada: ordenanza.reglamentada}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(data){
     //$scope.msg = "exito";
-    ;
+
     
     })
    }
  });
 
 app.controller("modifOrdenanzasCtrl", function($scope, $http) {
-  $scope.url = ''; // donde tiene que buscar
+  $scope.edit = function(ordenanza) {
+    $location.path('editar/${ordenanza.nroActSimple}')
+  }
+  
+});
 
-    // The function that will be executed on button click (ng-click="search()")
-    $scope.search = function() {
-        // Create the http post request
-        // the data holds the keywords
-        // The request is a JSON request.
-        $http.post($scope.url, { "data" : $scope.keywords}).
-        success(function(data, status) {
-            $scope.status = status;
-            $scope.data = data;
-            $scope.result = data; // Show result from server in our <pre></pre> element
-        })
-        .
-        error(function(data, status) {
-            $scope.data = data || "Request failed";
-            $scope.status = status;
-        });
-    };
+app.controller("editar-ctrl", function($scope, $http) {
+   $http.get("http://volderpayoda.sytes.net/api/ordenanzas:nroActSimple")
+    .then(function(response){
+        $scope.ordenanza = response.data.rows; 
+    }, function(response){
+        $scope.ordenanza = "algo fallo";
+    });
 });
