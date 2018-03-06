@@ -9,33 +9,27 @@ $stateProvider
         .state('ordenanzas', {
                 url: '/ordenanzas',
                 templateUrl: 'templates/ordenanzas.html',
-                controller:"ordenanzas-ctrl"
-                
-                
-            })
+                controller:"ordenanzas-ctrl"      
+        })
         .state('submit', {
                         url: '/submit',
                         templateUrl: 'templates/submit.html'
-                    })
+        })
         .state('alta-ordenanzas', {
                     url: '/alta-ordenanzas',
                     templateUrl: 'templates/alta-ordenanzas.html',
                     controller:"altaOrdenanzasCtrl"
-
-
-                })
+        })
     .state('modif-ordenanzas', {
                       url: '/modif-ordenanzas',
                       templateUrl: 'templates/modif-ordenanzas.html',
                       controller:"modifOrdenanzasCtrl"
-                  })
+        })
   .state('editar/:nroActSimple',{
      url:'editar/:nroActSimple', 
     templateUrl:'templates/editar.html',
     controller:"editar-ctrl"
-})
-        
-        ;
+});
 
     $urlRouterProvider.otherwise('/home');
 });
@@ -63,8 +57,6 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         reglamentada: ordenanza.reglamentada}
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(data){
     //$scope.msg = "exito";
-
-    
     })
    }
  });
