@@ -1,6 +1,6 @@
 <h1>Modificar ordenanza</h1>
 <p>
-  <input type="text" ng-model="nroActSimple" value="">
+  <input type="text" ng-model="test">
 </p>
 
 <div class="table-responsive">
@@ -17,7 +17,7 @@
           <th>Origen</th>
           <th>Subsecretarías asociadas</th>
       </tr>
-      <tr ng-repeat="ordenanza in ordenanzas | filter: {'nroActSimple' : nroActSimple}">
+      <tr ng-repeat="ordenanza in ordenanzas | filter: {'nroActSimple' : test}">
           <td>{{ ordenanza.nroActSimple }}</td>
           <td>{{ ordenanza.nroOrdenanza }}</td>
           <td>{{ ordenanza.tema }}</td>
