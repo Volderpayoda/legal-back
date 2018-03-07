@@ -61,18 +61,11 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
    }
  });
 
-app.controller("modifOrdenanzasCtrl", function($scope, $http) {
-  $scope.edit = function(ordenanza) {
-    $location.path('editar/${ordenanza.nroActSimple}')
-  }
-  
-});
-
-app.controller("editar-ctrl", function($scope, $http) {
-   $http.get("http://volderpayoda.sytes.net/api/ordenanzas:nroActSimple")
-    .then(function(response){
-        $scope.ordenanza = response.data.rows; 
-    }, function(response){
-        $scope.ordenanza = "algo fallo";
-    });
-});
+ app.controller("modifOrdenanzasCtrl", function($scope, $http) {
+    $http.get("http://volderpayoda.sytes.net/api/ordenanzas/${ordenanzas:nroActSimple}")
+     .then(function(response){
+         $scope.ordenanzas = response.data; 
+     }, function(response){
+         $scope.ordenanzas = "algo fallo";
+     });
+ });

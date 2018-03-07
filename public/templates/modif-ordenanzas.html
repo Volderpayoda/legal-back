@@ -3,17 +3,36 @@
   <input type="text" ng-model="ordenanza.nroActSimple">
 </p>
 
-<tr ng-repeat="ordenanza in ordenanzas | filter: ordenanza.nroActSimple">
-            <td>{{ ordenanza.nroActSimple }}</td>
-            <td>{{ ordenanza.nroOrdenanza }}</td>
-            <td>{{ ordenanza.tema }}</td>
-            <td>{{ ordenanza.promulgada }}</td>
-            <td>{{ ordenanza.fechaPromulgacion }}</td>
-            <td>{{ ordenanza.nroPromulgacion }}</td>
-            <td>{{ ordenanza.reglamentada }}</td>
-            <td>{{ ordenanza.observacion }}</td>
-            <td>{{ ordenanza.origen }}</td>
-</tr>
+<div class="table-responsive">
+  <table class="table">
+      <tr>
+          <th>Número de Actuación Simple</th>
+          <th>N° de Ordenanza</th>
+          <th>Tema</th>
+          <th>Promulgación</th>
+          <th>Fecha de Promulgación</th>
+          <th>N° de Resolución de Promulgación</th>
+          <th>Reglamentada</th>
+          <th>Observación </th>
+          <th>Origen</th>
+          <th>Subsecretarías asociadas</th>
+
+      </tr>
+      <tr ng-repeat="ordenanza in ordenanzas | filter: ordenanza.nroActSimple">
+          <td>{{ ordenanza.nroActSimple }}</td>
+          <td>{{ ordenanza.nroOrdenanza }}</td>
+          <td>{{ ordenanza.tema }}</td>
+          <td>{{ ordenanza.promulgada }}</td>
+          <td>{{ ordenanza.fechaPromulgacion }}</td>
+          <td>{{ ordenanza.nroPromulgacion }}</td>
+          <td>{{ ordenanza.reglamentada }}</td>
+          <td>{{ ordenanza.observacion }}</td>
+          <td>{{ ordenanza.origen }}</td>
+          <td>{{ ordenanza.subsecretaria }}</td>
+
+      </tr>
+  </table>
+</div>
 <button ng-click="edit(ordenanza)">
   Editar
 </button>
