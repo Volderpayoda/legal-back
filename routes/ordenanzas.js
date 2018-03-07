@@ -9,7 +9,7 @@ router.get("/", function(req, res, next){
     if(err) {
       return next(err);
     }
-    console.log(results)
+    console.log(results.rows)
     res.json(results);
   })
 })
