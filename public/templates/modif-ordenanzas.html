@@ -17,7 +17,7 @@
           <th>Origen</th>
           <th>Subsecretarías asociadas</th>
       </tr>
-      <tr ng-repeat="ordenanza in ordenanzas | filter: {'ordenanza.nroActSimple' : ordenanza.nroActSimple}">
+      <tr ng-repeat="ordenanza in ordenanzas | filter: {'ordenanza.nroActSimple' : nroActSimple}">
           <td>{{ ordenanza.nroActSimple }}</td>
           <td>{{ ordenanza.nroOrdenanza }}</td>
           <td>{{ ordenanza.tema }}</td>
