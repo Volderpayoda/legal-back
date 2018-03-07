@@ -5,7 +5,7 @@ var db = require("../db/index.js");
 var router = express.Router();
 
 router.get("/", function(req, res, next){
-  db.query("select * from ordenanzas, date(fechaPromulgacion) as fecha", function(err, results) {
+  db.query('select * from ordenanzas, date("fechaPromulgacion") as fecha', function(err, results) {
     if(err) {
       return next(err);
     }
