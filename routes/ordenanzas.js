@@ -27,10 +27,10 @@ router.post("/", function (req, res, next) {
   })
 });
 
-router.get("/:id", function (req, res, next) {
-  var _id = req.params.id;
+router.get("/:nroActSimple", function (req, res, next) {
+  var nroActSimple = req.params.nroActSimple;
   var text = 'select * from ordenanzas where _id = $1';
-  var params = [_id];
+  var params = [nroActSimple];
   db.query(text, params, function(err, results){
     if (err) {
       next(err);
