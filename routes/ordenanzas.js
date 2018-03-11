@@ -63,7 +63,7 @@ router.delete("/:id", function (req, res, next) {
 router.put("/:id", function (req, res, next) {
   var _id = req.params.id;
   var text = 'update ordenanzas set ' + 
-      'nroOrdenanza = $1, tena = $2, promulgacion = $3, fechaPromulgacion = $4, nroPromulgacion = $5, observacion = $6, nroActSimple = $7, presento = $8, origen = $9, reglamentada = $10' + 
+      'nroOrdenanza = $1, tema = $2, promulgacion = $3, fechaPromulgacion = $4, nroPromulgacion = $5, observacion = $6, nroActSimple = $7, presento = $8, origen = $9, reglamentada = $10' + 
       'where _id = $11';
   var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada, _id];
   db.query(text, params, function(err, results){
