@@ -9,6 +9,55 @@
                 <label>Número de Actuación Simple: </label>
                 <input class="form-control" type="text" ng-model="ordenanza.nroActSimple" value="{{ordenanza.nroActSimple}}"/>
             </div>
+            <div class="col-md-12">
+                <label>Número de Ordenanza: </label>
+                <input class="form-control" type="text" ng-model="ordenanza.nroOrdenanza" value="{{ordenanza.nroOrdenanza}}"/>
+            </div>
+            <div class="col-md-12">
+                <label>Tema: </label>
+                <input class="form-control" type="text" ng-model="ordenanza.tema" value="{{ordenanza.tema}}"/>
+            </div>
+            <div class="col-md-12">
+                <label>Estado: </label>
+                <div class="dropdown">
+                  <button ng-disabled="true" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Seleccione estado
+                  <span class="caret"></span></button>
+                  <ul class=""dropdown-menu>
+                    <li>Promulgada</li>
+                    <li>Vetada</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>Fecha de Promulgación: </label>
+                <input class="form-control" type="text" ng-model="ordenanza.fechaPromulgacion" value="{{ordenanza.fechaPromulgacion}}"/>
+            </div>
+            <div class="col-md-12">
+                <label>Observacion </label>
+                <input class="form-control" type="text" ng-model="ordenanza.observacion" value="{{ordenanza.observacion}}"/>
+            </div>
+            <div class="col-md-12">
+                <label>Presentó: </label>
+                <div class="dropdown">
+                  <button ng-disabled="true" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Seleccione estado
+                  <span class="caret"></span></button>
+                  <ul class=""dropdown-menu>
+                    <li>Ejecutivo</li>
+                    <li>Legislativo</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>Reglamentada: </label>
+                <div class="dropdown">
+                  <button ng-disabled="true" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Seleccione estado
+                  <span class="caret"></span></button>
+                  <ul class=""dropdown-menu>
+                    <li>Si</li>
+                    <li>No</li>
+                  </ul>
+                </div>
+            </div>                             
         </div>
     </fieldset>
 </form>
