@@ -71,5 +71,21 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
     }, function(response){
         $scope.ordenanza = "algo fallo";
     });
-}
+};
+    $scope.put =  function(ordenanza) {
+        var data = {
+        nroOrdenanza: ordenanza.nroOrdenanza, 
+        tema: ordenanza.tema, 
+        promulgacion: ordenanza.promulgacion, 
+        fechaPromulgacion: ordenanza.fechaPromulgacion, 
+        nroPromulgacion: ordenanza.nroPromulgacion, 
+        observacion: ordenanza.observacion, 
+        nroActSimple: ordenanza.nroActSimple, 
+        presento: ordenanza.presento, 
+        reglamentada: ordenanza.reglamentada
+        }
+    $http.put("http://volderpayoda.sytes.net/api/ordenanzas"+nroActSimple,JSON.stringify(data)).then(function(data){
+        //$scope.msg ="exito"
+    })
+    }
      });
