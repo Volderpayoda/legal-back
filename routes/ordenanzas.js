@@ -62,6 +62,7 @@ router.delete("/:id", function (req, res, next) {
 
 router.put("/:id", function (req, res, next) {
   var _id = req.params.id;
+  var ordenanza = req.body;
   var text = 'update ordenanzas set ' + 
       'nroOrdenanza = $1, tema = $2, promulgacion = $3, fechaPromulgacion = $4, nroPromulgacion = $5, observacion = $6, nroActSimple = $7, presento = $8, origen = $9, reglamentada = $10' + 
       'where _id = $11';
