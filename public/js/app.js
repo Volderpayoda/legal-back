@@ -63,7 +63,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
  
  app.controller("modifOrdenanzasCtrl", function($scope, $http) {
      $scope.buscarOrdenanza = function(nroActSimple) {
-         http.get("http://volderpayoda.sytes.net/api/ordenanzas"+nroActSimple).then 
+         http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple).then 
          $scope.ordenanza = response.data       
         }
      }); 
