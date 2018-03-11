@@ -19,14 +19,8 @@
             </div>
             <div class="col-md-12">
                 <label>Estado: </label>
-                <div class="dropdown">
-                  <button ng-disabled="true" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Seleccione estado
-                  <span class="caret"></span></button>
-                  <ul class=""dropdown-menu>
-                    <li>Promulgada</li>
-                    <li>Vetada</li>
-                  </ul>
-                </div>
+                <div><label class="radio-inline"><input type="radio" value="promulgada" ng-model="ordenanza.promulgacion">Promulgada</label></div>
+                <div><label class="radio-inline"><input type="radio" value="vetada" ng-model="ordenanza.promulgacion">Vetada</label></div>
             </div>
             <div class="col-md-12">
                 <label>Fecha de Promulgación: </label>
