@@ -41,7 +41,7 @@ router.get("/:nroActSimple", function (req, res, next) {
       next(err);
       return;
     }
-    console.log(results);
+    console.log(results.rows);
     res.json(results.rows);
   })
 });
