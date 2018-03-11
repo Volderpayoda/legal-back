@@ -1,9 +1,19 @@
 <h1>Modificar ordenanza</h1>
 <input type="text" placeholder="Nº de Actuación Simple" ng-model="nroActSimple" value="">
 <button type="search" ng-click="buscarOrdenanza(nroActSimple)">Buscar</button>
-{{ordenanza.nroActSimple}}
+<tr ng-repeat="ordenanza in ordenanzas">
+    <td>{{ ordenanza.nroActSimple }}</td>
+    <td>{{ ordenanza.nroOrdenanza }}</td>
+    <td>{{ ordenanza.tema }}</td>
+    <td>{{ ordenanza.promulgada }}</td>
+    <td>{{ ordenanza.fechaPromulgacion }}</td>
+    <td>{{ ordenanza.nroPromulgacion }}</td>
+    <td>{{ ordenanza.reglamentada }}</td>
+    <td>{{ ordenanza.observacion }}</td>
+    <td>{{ ordenanza.origen }}</td>
+    <td>{{ ordenanza.subsecretaria }}</td>
 
-{{ordenanza}}
+</tr>
 <form class="formulario" align="center">
     <fieldset>
         <div class="form-horizontal">
