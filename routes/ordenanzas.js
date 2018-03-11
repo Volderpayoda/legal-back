@@ -42,7 +42,7 @@ router.get("/:nroActSimple", function (req, res, next) {
       return;
     }
     console.log(results);
-    res.json(results);
+    res.json(results.rows);
   })
 });
 
