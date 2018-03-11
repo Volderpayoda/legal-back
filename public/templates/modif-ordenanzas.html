@@ -32,18 +32,18 @@
             </div>
             <div class="col-md-12">
                 <label>Presentó: </label>
-                <div><label class="radio-inline"><input type="radio" ng-model="ordenanza.presento" value="{{ordenanza.presento}}">Ejecutivo</label></div>
-                <div><label class="radio-inline"><input type="radio" ng-model="ordenanza.presento" value="{{ordenanza.presento}}">Legislativo</label></div>
+                <div><label class="radio-inline"><input type="radio" value="Ejecutivo" ng-model="ordenanza.presento">Ejecutivo</label></div>
+                <div><label class="radio-inline"><input type="radio" value="Legislativo" ng-model="ordenanza.presento">Legislativo</label></div>
             </div>
             <div class="col-md-12">
                 <label>Reglamentada: </label>
-                <div><label class="radio-inline"><input type="radio" value="{{ordenanza.reglamentada}}" ng-model="ordenanza.reglamentada">Si</label></div>
-                <div><label class="radio-inline"><input type="radio" value="{{ordenanza.reglamentada}}" ng-model="ordenanza.reglamentada">No</label></div>
+                <div><label class="radio-inline"><input type="radio" value="Si" ng-model="ordenanza.reglamentada">Si</label></div>
+                <div><label class="radio-inline"><input type="radio" value="No" ng-model="ordenanza.reglamentada">No</label></div>
             </div>
         </div>
         <p></p>
         <div class="col-md-12">
-            <input class="botonEnviar" ui-sref="submit" type="button" value="Enviar" ng-click="put(ordenanza)"/> 
+            <input class="botonEnviar" ui-sref="submit" type="button" value="Modificar" ng-click="put(ordenanza)"/> 
         </div>
     </fieldset>
 </form>
