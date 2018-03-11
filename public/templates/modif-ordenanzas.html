@@ -2,4 +2,13 @@
 <input type="text" placeholder="Nº de Actuación Simple" ng-model="nroActSimple" value="">
 <button type="search" ng-click="buscarOrdenanza(nroActSimple)">Buscar</button>
 
-<input value="{{ordenanza.nroOrdenanza}}"> </input>
+<form class="formulario" align="center">
+    <fieldset>
+        <div class="form-horizontal">
+            <div class="col-md-12">
+                <label>Número de Actuación Simple: </label>
+                <input class="form-control" type="text" ng-model="ordenanza.nroActSimple" value="{{ordenanza.nroActSimple}}"/>
+            </div>
+        </div>
+    </fieldset>
+</form>
