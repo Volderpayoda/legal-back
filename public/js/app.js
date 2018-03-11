@@ -67,7 +67,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
     .then(function(response){
         $scope.msg="hasta aca llego"
-        $scope.ordenanza = response.data; 
+        $scope.ordenanza = response.data.rows; 
     }, function(response){
         $scope.ordenanza = "algo fallo";
     });
