@@ -34,7 +34,7 @@ router.post("/", function (req, res, next) {
 
 router.get("/:nroActSimple", function (req, res, next) {
   var nroActSimple = req.params.nroActSimple;
-  var text = 'select * from ordenanzas where nroActSimple = $1';
+  var text = 'select * from ordenanzas where "nroActSimple" = $1';
   var params = [nroActSimple];
   db.query(text, params, function(err, results){
     if (err) {
