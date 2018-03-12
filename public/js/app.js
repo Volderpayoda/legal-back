@@ -90,7 +90,9 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
         $scope.msg = "hasta aca llego"
         $state.go('submit');
         
-    })
+    }), function(data){
+        $scope.msg = "ERROR: No pudimos enviar tu ordenanza"
+    }
    }
  });
  
