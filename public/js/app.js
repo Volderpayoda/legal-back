@@ -55,7 +55,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
         nroActSimple: ordenanza.nroActSimple, 
         presento: ordenanza.presento, 
         reglamentada: ordenanza.reglamentada,
-        sub: { 
+        /*sub: { 
             num1: ordenanza.sub1,
             num2: ordenanza.sub2,
             num3: ordenanza.sub3,
@@ -83,7 +83,8 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
             num25: ordenanza.sub25,
             num26: ordenanza.sub26,
             num27: ordenanza.sub27,
-        }
+        }*/
+        sub:[ordenanza.sub1, ordenanza.sub2, ordenanza.sub3]
 
     }
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(data){
