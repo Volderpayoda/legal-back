@@ -101,7 +101,6 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
     .then(function(response){
         $scope.msg="hasta aca llego"
         $scope.ordenanza = response.data; 
-        $scope.var = "true"
     }, function(response){
         $scope.ordenanza = "algo fallo";
     });
