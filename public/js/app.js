@@ -99,7 +99,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
  app.controller("modifOrdenanzasCtrl", function($scope, $http, $state) {
     
      $scope.buscarOrdenanza = function(nroActSimple) {
-        $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
+     $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
     .then(function(response){
         $scope.msg="hasta aca llego"
         $scope.ordenanza = response.data; 
