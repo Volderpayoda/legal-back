@@ -96,7 +96,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
    }
  });
  
- app.controller("modifOrdenanzasCtrl", function($scope, $http) {
+ app.controller("modifOrdenanzasCtrl", function($scope, $http, $state) {
     
      $scope.buscarOrdenanza = function(nroActSimple) {
         $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
@@ -148,7 +148,9 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
         }    
         }
     $http.put("http://volderpayoda.sytes.net/api/ordenanzas/" + ordenanza._id,JSON.stringify(data)).then(function(data){
-        //$scope.msg ="exito"
-    })
+        $state.go('submit')
+    }), function(data) {
+        $scope.msg="ERROR: No pudimos modificar la ordenanza. Algo falló"
+    }
     }
      });
