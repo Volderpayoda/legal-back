@@ -1,8 +1,8 @@
 <h1>Modificar ordenanza</h1>
 <input type="text" placeholder="Nº de Actuación Simple" ng-model="nroActSimple" value="">
-<button type="search" ng-click="buscarOrdenanza(nroActSimple)">Buscar</button>
+<button type="search" ng-click="buscarOrdenanza(nroActSimple)" ng-model="var">Buscar</button>
 
-<form class="formulario" align="center">
+<form class="formulario" align="center" ng-show="var">
     <fieldset>
         <div class="form-horizontal">
             <div class="col-md-12">
