@@ -23,13 +23,10 @@ $stateProvider
     .state('modif-ordenanzas', {
                       url: '/modif-ordenanzas',
                       templateUrl: 'templates/modif-ordenanzas.html',
-                      controller:"modifOrdenanzasCtrl"
+                      controller:"modifOrdenanzasCtrl", 
+                      
         })
-  .state('editar/:nroActSimple',{
-     url:'editar/:nroActSimple', 
-    templateUrl:'templates/editar.html',
-    controller:"editar-ctrl"
-});
+;
 
     $urlRouterProvider.otherwise('/home');
 });
@@ -104,6 +101,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
     .then(function(response){
         $scope.msg="hasta aca llego"
         $scope.ordenanza = response.data; 
+        $scope.var = "true"
     }, function(response){
         $scope.ordenanza = "algo fallo";
     });
