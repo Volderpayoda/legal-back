@@ -82,8 +82,9 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         observacion: ordenanza.observacion, 
         nroActSimple: ordenanza.nroActSimple, 
         presento: ordenanza.presento, 
-        reglamentada: ordenanza.reglamentada,
         num1: "aca llego",
+        reglamentada: ordenanza.reglamentada,
+       
         num2: ordenanza.sub2,
         num3: ordenanza.sub3
 
