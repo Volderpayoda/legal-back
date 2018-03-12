@@ -82,7 +82,12 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
         observacion: ordenanza.observacion, 
         nroActSimple: ordenanza.nroActSimple, 
         presento: ordenanza.presento, 
-        reglamentada: ordenanza.reglamentada
+        reglamentada: ordenanza.reglamentada,
+        sub: {
+            1: ordenanza.sub1,
+            2: ordenanza.sub2,
+            3: ordenanza.sub3
+        }
         }
     $http.put("http://volderpayoda.sytes.net/api/ordenanzas/" + ordenanza._id,JSON.stringify(data)).then(function(data){
         //$scope.msg ="exito"
