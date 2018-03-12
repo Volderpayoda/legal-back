@@ -87,8 +87,9 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http) {
 
     }
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data)).then(function(data){
-        $state.go('submit');
         $scope.msg = "hasta aca llego"
+        $state.go('submit');
+        
     })
    }
  });
