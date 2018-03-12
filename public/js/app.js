@@ -43,7 +43,7 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
     });
 });
 
-app.controller("altaOrdenanzasCtrl", function($scope, $http) {
+app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
     $scope.postdata = function(ordenanza) {
     var data = {
         nroOrdenanza: ordenanza.nroOrdenanza, 
