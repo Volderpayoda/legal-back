@@ -92,6 +92,17 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
     }), function(data){
         $scope.msg = "ERROR: No pudimos enviar tu ordenanza"}
 });
+
+app.directive("uploaderModel", ["$parse", function($parse){
+    return {
+        restrict: 'A',
+        link: function(scope, iElement, iAttrs){
+            iElement.on("change",function(e){
+                $parse(iAttrs.uploaderModel).assing(scope, iElement[0].files[0]);
+            })
+        }
+    }
+}])
  
  app.controller("modifOrdenanzasCtrl", function($scope, $http, $state) {
     
