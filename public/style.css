@@ -28,6 +28,7 @@ label {
 .formulario {
     background-color: #e6e6e6;
     border-radius: 5px;
+    text-align: left;
 
 }
 .botonEnviar {
