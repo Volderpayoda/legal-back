@@ -27,8 +27,7 @@ label {
 
 .formulario {
     background-color: #e6e6e6;
-    border-radius: 5px;
-    text-align: left;
+    border-radius: 5px
 
 }
 .botonEnviar {
@@ -232,4 +231,9 @@ label {
 
 .checkbox-label {
   margin-top: 5px;
+}
+
+.adjuntar {
+    background-color: #e6e6e6;
+    border-radius: 5px;
 }
