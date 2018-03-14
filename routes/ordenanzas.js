@@ -32,22 +32,20 @@ router.post("/", function (req, res, next) {
           return;
       }
       _id = results.rows[0]._id;
-      console.log(_id);
-      //res.sendStatus(201);
-  })
-  ordenanza.sub.forEach(function(item){
-    if(item != null) {
-      text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
-      var params = [_id, item];
-      db.query(text, params, function(err, results){
-        if (err) {
-          next(err);
-          return;
+      ordenanza.sub.forEach(function(item){
+        if(item != null) {
+          text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
+          var params = [_id, item];
+          db.query(text, params, function(err, results){
+            if (err) {
+              next(err);
+              return;
+            }
+          })      
         }
-      })      
-    }
-  });
-  res.sendStatus(201);
+      });
+      res.sendStatus(201);
+  })
 });
 
 router.get("/:nroActSimple", function (req, res, next) {
