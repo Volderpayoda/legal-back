@@ -83,14 +83,14 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
             }*/
             sub:[ordenanza.sub1, ordenanza.sub2, ordenanza.sub3]
         };
-    }
+    
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data))
         .then(function(data){
             $scope.msg = "hasta aca llego"
             $state.go('submit');    
         }), function(data){
         $scope.msg = "ERROR: No pudimos enviar tu ordenanza"}
-});
+}});
 
  app.controller("modifOrdenanzasCtrl", function($scope, $http, $state) {
      $scope.buscarOrdenanza = function(nroActSimple) {
