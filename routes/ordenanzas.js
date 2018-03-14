@@ -32,6 +32,7 @@ router.post("/", function (req, res, next) {
           return;
       }
       _id = results.rows[0]._id;
+      console.log(_id);
       //res.sendStatus(201);
   })
   ordenanza.sub.forEach(function(item){
