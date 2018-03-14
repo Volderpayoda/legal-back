@@ -34,7 +34,7 @@ router.post("/", function (req, res, next) {
       _id = results.rows[0]._id;
       //res.sendStatus(201);
   })
-  sub.forEach(function(item){
+  ordenanza.sub.forEach(function(item){
       text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
       var params = [_id, item];
       db.query(text, params, function(err, results){
