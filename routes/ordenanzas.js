@@ -35,6 +35,7 @@ router.post("/", function (req, res, next) {
       //res.sendStatus(201);
   })
   ordenanza.sub.forEach(function(item){
+    if(item != null) {
       text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
       var params = [_id, item];
       db.query(text, params, function(err, results){
@@ -42,7 +43,8 @@ router.post("/", function (req, res, next) {
           next(err);
           return;
         }
-      })
+      })      
+    }
   });
   res.sendStatus(201);
 });
