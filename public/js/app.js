@@ -2,29 +2,33 @@ var app =angular.module("legal",['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: 'templates/home.html'
+    .state('login', {
+        url:'/login',
+        template: 'templates/login.html',
+        controller: 'login-ctrl'
         })
-        .state('ordenanzas', {
-                url: '/ordenanzas',
-                templateUrl: 'templates/ordenanzas.html',
-                controller:"ordenanzas-ctrl"      
+    .state('home', {
+        url: '/home',
+        templateUrl: 'templates/home.html'
         })
-        .state('submit', {
-                        url: '/submit',
-                        templateUrl: 'templates/submit.html'
+    .state('ordenanzas', {
+        url: '/ordenanzas',
+        templateUrl: 'templates/ordenanzas.html',
+        controller:"ordenanzas-ctrl"      
         })
-        .state('alta-ordenanzas', {
-                    url: '/alta-ordenanzas',
-                    templateUrl: 'templates/alta-ordenanzas.html',
-                    controller:"altaOrdenanzasCtrl"
+    .state('submit', {
+        url: '/submit',
+        templateUrl: 'templates/submit.html'
+        })
+    .state('alta-ordenanzas', {
+        url: '/alta-ordenanzas',
+        templateUrl: 'templates/alta-ordenanzas.html',
+        controller:"altaOrdenanzasCtrl"
         })
     .state('modif-ordenanzas', {
-                      url: '/modif-ordenanzas',
-                      templateUrl: 'templates/modif-ordenanzas.html',
-                      controller:"modifOrdenanzasCtrl", 
-                      
+        url: '/modif-ordenanzas',
+        templateUrl: 'templates/modif-ordenanzas.html',
+        controller:"modifOrdenanzasCtrl",           
         })
 ;
 
@@ -71,7 +75,7 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
         $scope.msg = "ERROR: No pudimos enviar tu ordenanza"}
 }});
 
- app.controller("modifOrdenanzasCtrl", function($scope, $http, $state) {
+app.controller("modifOrdenanzasCtrl", function($scope, $http, $state) {
      $scope.buscarOrdenanza = function(nroActSimple) {
      $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
     .then(function(response){
@@ -129,3 +133,4 @@ app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
     }
     }
      });
+
