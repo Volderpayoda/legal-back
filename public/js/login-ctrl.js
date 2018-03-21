@@ -1,5 +1,4 @@
-app.controller('login-ctrl', ['$scope', '$state', 'AuthService',
-function ($scope, $location, AuthService) {
+app.controller('login-ctrl', function ($scope, $location, AuthService) {
     $scope.msg="aca";
   $scope.login = function () {
 
@@ -25,4 +24,4 @@ function ($scope, $location, AuthService) {
 
   };
 
-}]);
+});
