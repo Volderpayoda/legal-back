@@ -4,7 +4,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
     .state('login', {
         url:'/login',
-        template: 'templates/login.html',
+        templateUrl: 'templates/login.html',
         controller: 'login-ctrl'
         })
     .state('logout', {
