@@ -1,6 +1,6 @@
 app.controller('login-ctrl', ['$scope', '$state', 'AuthService',
 function ($scope, $location, AuthService) {
-
+    $scope.msg="aca";
   $scope.login = function () {
 
     // initial values
