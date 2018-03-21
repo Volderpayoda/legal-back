@@ -3,10 +3,11 @@ var passport = require('passport');
 var Account = require('../models/account');
 var router = express.Router();
 
-router.post('/register', function(req, res){
+router.post('/register', function(req, res, next){
     Account.register(new Account({ username: req.body.username}), req.body.password, function(err, account) {
         if (err) {
-            return err;
+            next(err);
+            return;
         }
         passport.authenticate('local')(req, res, function(){
             res.sendStatus(201);
