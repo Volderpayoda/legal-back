@@ -1,7 +1,7 @@
-angular.module('legal').factory('AuthService',
+app.factory('AuthService',
   ['$q', '$timeout', '$http',
   function ($q, $timeout, $http) {
-
+    $scope.msg="aca"
     // crear variable "usuario"
     var user = null;
 
