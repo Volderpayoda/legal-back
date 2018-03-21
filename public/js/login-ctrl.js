@@ -1,4 +1,5 @@
 app.controller('login-ctrl', function ($scope, $state, AuthService) {
+    
 $scope.msg="aca";
   $scope.login = function () {
 
