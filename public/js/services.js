@@ -20,7 +20,7 @@ angular.module('legal').factory('AuthService',
         var deferred = $q.defer();
         
         // enviar un "POST" al servidor
-        $http.post('/user/login', {username: username, password: password})
+        $http.post('http://volderpayoda.sytes.net/api/usuarios/login', {username: username, password: password})
         // manejar éxito
         .success(function(data, status) {
             if (status === 200 && data.status) {
@@ -50,7 +50,7 @@ angular.module('legal').factory('AuthService',
         var deferred = $q.defer();
 
         // send a get request to the server
-        $http.get('/user/logout')
+        $http.get('http://volderpayoda.sytes.net/api/usuarios/logout')
         // manejar exito
         .success(function (data) {
             user = false;
