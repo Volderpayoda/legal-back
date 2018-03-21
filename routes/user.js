@@ -11,6 +11,7 @@ router.post('/register', function(req, res, next){
         }
         console.log('Registro exitoso')
         passport.authenticate('local')(req, res, function(){
+            console.log('Autenticado');
             res.sendStatus(201);
         })
     })
