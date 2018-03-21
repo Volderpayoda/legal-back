@@ -9,14 +9,14 @@ router.post('/register', function(req, res, next){
             next(err);
             return;
         }
-        console.log('Registro exitoso')
         passport.authenticate('local')(req, res, function(){
-            console.log('Autenticado');
             res.sendStatus(201);
         })
     })
 })
 
-router.post('/login', passport.authenticate('local'))
+router.post('/login', passport.authenticate('local'), function(req, res){
+    res.sendStatus(200);
+})
 
 module.exports = router;
