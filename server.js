@@ -12,9 +12,6 @@ var usuarios = require("./routes/user")
 
 var app = express();
 
-// mongoose
-mongoose.connect(MONGOURL);
-
 // app config
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,6 +29,9 @@ var Account = require('./models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
+
+// mongoose
+mongoose.connect(MONGOURL);
 
 // route mounting
 app.use("/api/ordenanzas", ordenanzas);

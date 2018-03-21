@@ -4,11 +4,6 @@ var db = require("../db/index.js");
 
 var router = express.Router();
 
-router.all("*", function(req, res, next) {
-  console.log('HIT!');
-  next();
-})
-
 router.get("/", function(req, res, next){
   db.query('select * from ordenanzas', function(err, results) {
     if(err) {
