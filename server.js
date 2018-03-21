@@ -8,7 +8,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var ordenanzas = require("./routes/ordenanzas");
-var usuarios = require("./routes/user")
+//var usuarios = require("./routes/user")
 
 var app = express();
 
