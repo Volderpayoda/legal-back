@@ -6,7 +6,6 @@ var path = require("path");
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-console.log('1');
 var ordenanzas = require("./routes/ordenanzas");
 var usuarios = require("./routes/user")
 
@@ -43,4 +42,3 @@ app.use(express.static(path.join(__dirname, "public")));
 app.listen(80, function () {
     console.log("Servidor iniciado");
 });
-console.log('2');
