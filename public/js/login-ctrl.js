@@ -1,5 +1,5 @@
-app.controller('login-ctrl', function ($scope, $state) {
-    $scope.msg="aca";
+app.controller('login-ctrl', function ($scope, $state, AuthService) {
+$scope.msg="aca";
   $scope.login = function () {
 
     // initial values
