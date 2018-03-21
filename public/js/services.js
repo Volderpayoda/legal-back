@@ -1,5 +1,5 @@
-app.factory('AuthService', function ($q, $timeout, $http) {
-
+app.factory('AuthService', function () {
+/*
     // crear variable "usuario"
     var user = null;
 
@@ -71,5 +71,5 @@ app.factory('AuthService', function ($q, $timeout, $http) {
       logout: logout,
       register: register
     });
-
+*/
 });
