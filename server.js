@@ -31,7 +31,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-mongoose.connect(MONGOURL);
+mongoose.connect(process.env.MONGOURL);
 
 // route mounting
 app.use("/api/ordenanzas", ordenanzas);
