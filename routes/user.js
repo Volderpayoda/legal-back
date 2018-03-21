@@ -9,7 +9,7 @@ router.post('/register', function(req, res){
             next(err);
             return
         }
-        passport.autenthicate('local')(req, res, function(){
+        passport.authenticate('local')(req, res, function(){
             res.sendStatus(201);
         })
     })
