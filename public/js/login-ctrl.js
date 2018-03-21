@@ -1,11 +1,11 @@
-app.controller('login-ctrl', function ($scope, $location, AuthService) {
+app.controller('login-ctrl', function ($scope, $state) {
     $scope.msg="aca";
   $scope.login = function () {
 
     // initial values
     $scope.error = false;
     $scope.disabled = true;
-
+/*
     // call login from service
     AuthService.login($scope.loginForm.username, $scope.loginForm.password)
       // handle success
@@ -21,7 +21,7 @@ app.controller('login-ctrl', function ($scope, $location, AuthService) {
         $scope.disabled = false;
         $scope.loginForm = {};
       });
-
+*/
   };
 
 });
