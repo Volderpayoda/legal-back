@@ -38,8 +38,8 @@ $stateProvider
     $urlRouterProvider.otherwise('/home');
 });
 
-app.controller('login-ctrl', function ($scope, $location, AuthService) {
-    $scope.msg="aca";
+app.controller('login-ctrl', function ($scope, $state, AuthService) {
+    $scope.msg='aca';
   $scope.login = function () {
 
     // initial values
