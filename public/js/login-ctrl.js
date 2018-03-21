@@ -1,5 +1,6 @@
 app.controller('login-ctrl', function ($scope, $state, AuthService) {
-    
+    $scope.msg=AuthService.holaMundo();
+    /*
 $scope.msg="aca";
   $scope.login = function () {
 
@@ -22,7 +23,7 @@ $scope.msg="aca";
         $scope.disabled = false;
         $scope.loginForm = {};
       });
-*/
-  };
 
+  };
+*/
 });

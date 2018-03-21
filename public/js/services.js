@@ -1,5 +1,11 @@
 app.factory('AuthService', function () {
-/*
+    var data = {
+        holaMundo: function(){
+            return true;
+        }
+    }
+    return data;
+    /*
     // crear variable "usuario"
     var user = null;
 
