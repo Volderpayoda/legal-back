@@ -1,5 +1,4 @@
 app.factory('AuthService',
-  ['$q', '$timeout', '$http',
   function ($q, $timeout, $http) {
 
     // crear variable "usuario"
