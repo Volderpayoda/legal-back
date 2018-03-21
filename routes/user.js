@@ -17,4 +17,6 @@ router.post('/register', function(req, res, next){
     })
 })
 
+router.post('/login', passport.authenticate('local'))
+
 module.exports = router;
