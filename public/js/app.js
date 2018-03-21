@@ -34,7 +34,7 @@ $stateProvider
 
     $urlRouterProvider.otherwise('/home');
 });
-
+/*
 app.controller("ordenanzas-ctrl", function($scope, $http) {
    $http.get("http://volderpayoda.sytes.net/api/ordenanzas")
     .then(function(response){
@@ -42,7 +42,7 @@ app.controller("ordenanzas-ctrl", function($scope, $http) {
     }, function(response){
         $scope.ordenanzas = "algo fallo";
     });
-});
+});*/
 
 app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
     $scope.postdata = function(ordenanza) {
