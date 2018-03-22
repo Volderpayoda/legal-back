@@ -29,7 +29,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         $http.post('http://volderpayoda.sytes.net/api/usuarios/login', JSON.stringify(data))
         // manejar éxito
         .then(function(data) {
-            
+            return true;
             if (data.status) {
                 return true;
                 user = true;
