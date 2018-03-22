@@ -4,8 +4,8 @@ app.factory('AuthService', function () {
             return true;
         }
     }
-    return data;
-    /*
+    
+   
     // crear variable "usuario"
     var user = null;
 
@@ -18,7 +18,7 @@ app.factory('AuthService', function () {
             return false;
         }
     }
-
+/*
     function login(username, password) {
         // crear una nueva instancia de "deferred"
         var deferred = $q.defer();
@@ -69,7 +69,8 @@ app.factory('AuthService', function () {
         //devuelve el objeto "promise"
         return deferred.promise;
     }
-          
+    */
+    return data;   
     return ({
       isLoggedIn: isLoggedIn,
       getUserStatus: getUserStatus,
@@ -77,5 +78,6 @@ app.factory('AuthService', function () {
       logout: logout,
       register: register
     });
-*/
+    
+
 });
