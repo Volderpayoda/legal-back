@@ -26,7 +26,8 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         $http.post('http://volderpayoda.sytes.net/api/usuarios/login', {username: username, password: password})
         // manejar éxito
         .then(function(data, status) {
-            if (status === 200) {
+            return true;
+            if (status === 200 && data.status) {
                 return true;
                 user = true;
                 deferred.resolve();
