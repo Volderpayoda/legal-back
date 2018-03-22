@@ -1,5 +1,5 @@
 app.controller('login-ctrl', function ($scope, $state, AuthService) {
-    $scope.msg=AuthService.holaMundo();
+    $scope.msg=AuthService.isLoggedIn();
     /*
 $scope.msg="aca";
   $scope.login = function () {

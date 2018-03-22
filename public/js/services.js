@@ -70,13 +70,13 @@ app.factory('AuthService', function () {
         return deferred.promise;
     }
     */
-    return data;   
+  
     return ({
       isLoggedIn: isLoggedIn,
-      getUserStatus: getUserStatus,
-      login: login,
+      getUserStatus: getUserStatus
+      /*login: login,
       logout: logout,
-      register: register
+      register: register*/
     });
     
 
