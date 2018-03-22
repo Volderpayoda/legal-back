@@ -1,6 +1,6 @@
 app.controller('login-ctrl', function ($scope, $state, AuthService) {
 
-    $scope.msg="aca";
+   
     $scope.login = function () {
         // initial values
         $scope.error = false;
@@ -8,6 +8,7 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
 
         // call login from service
         AuthService.login($scope.loginForm.username, $scope.loginForm.password).then(function () {
+            $scope.msg="aca";
             $state.go('home');
             $scope.disabled = false;
             $scope.loginForm = {};
