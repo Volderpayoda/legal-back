@@ -9,7 +9,7 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
         AuthService.login($scope.loginForm.username, $scope.loginForm.password).then(function () {
             $scope.msg="aca";
             $state.go('home');
-            $scope.disabled = true;
+            $scope.disabled = false;
             $scope.loginForm = {};
         }), function () {
             $scope.error = true;
