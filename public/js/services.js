@@ -29,6 +29,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             if (status === 200 && data.status) {
                 user = true;
                 deferred.resolve();
+                return true;
             } else {
                 user = false;
                 deferred.reject();

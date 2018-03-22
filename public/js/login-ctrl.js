@@ -4,7 +4,7 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
     $scope.login = function () {
         // initial values
         $scope.error = false;
-        //$scope.disabled = true;
+        $scope.disabled = true;
         // call login from service
         AuthService.login($scope.loginForm.username, $scope.loginForm.password).then(function () {
             $scope.msg="aca";
