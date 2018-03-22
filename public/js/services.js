@@ -1,4 +1,4 @@
-app.factory('AuthService', function () {
+app.factory('AuthService', function ($q,$timeout,$http) {
     var data = {
         holaMundo: function(){
             return true;
