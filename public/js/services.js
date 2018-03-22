@@ -37,15 +37,16 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             } else {
                 user = false;
                 deferred.reject();
-            }
-        }), function(data) {
+            }*/
+        }), function() {
+            return false;
             user = false;
             deferred.reject();
         };
 
         // devuelve objeto "promise"
-        return deferred.promise;*/
-    })}
+        //return deferred.promise;
+    }
 
     function getUserStatus() {
         return user;
