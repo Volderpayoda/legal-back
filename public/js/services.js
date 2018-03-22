@@ -42,7 +42,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         // devuelve objeto "promise"
         return deferred.promise;
     }
-/*
+
     function getUserStatus() {
         return user;
     }
@@ -54,27 +54,23 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         // send a get request to the server
         $http.get('http://volderpayoda.sytes.net/api/usuarios/logout')
         // manejar exito
-        .success(function (data) {
+        .then(function (data) {
             user = false;
             deferred.resolve();
-        })
-        // manejar error
-        .error(function(data) {
+        }), function(data) {
             user = false;
             deferred.reject();
-        });
+        };
 
         //devuelve el objeto "promise"
         return deferred.promise;
     }
-    */
   
     return ({
       isLoggedIn: isLoggedIn,
       login: login,
-      /*getUserStatus: getUserStatus,
+      getUserStatus: getUserStatus,
       logout: logout,
-      register: register*/
     });
     
 
