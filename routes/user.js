@@ -35,7 +35,6 @@ router.post('/login', function(req, res, next){
                     err: 'No se pudo iniciar sesión'
                 });
             }
-            console.log('login exitoso');
             res.status(200).json({
                 status: 'Inicio de sesión correcto'
             });
