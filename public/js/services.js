@@ -27,9 +27,10 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         // manejar éxito
         .then(function(data, status) {
             if (status === 200 && data.status) {
+                return true;
                 user = true;
                 deferred.resolve();
-                return true;
+                
             } else {
                 user = false;
                 deferred.reject();
