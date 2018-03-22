@@ -30,14 +30,14 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         // manejar éxito
         .then(function() {
             return true;
-            /*if (data.status) {
+            if (status === 200 && data.status) {
                 user = true;
                 deferred.resolve();
                 
             } else {
                 user = false;
                 deferred.reject();
-            }*/
+            }
         }), function() {
             return false;
             user = false;
@@ -45,7 +45,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         };
 
         // devuelve objeto "promise"
-        //return deferred.promise;
+        return deferred.promise;
     }
 
     function getUserStatus() {
