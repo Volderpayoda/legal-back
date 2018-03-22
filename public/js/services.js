@@ -21,13 +21,16 @@ app.factory('AuthService', function ($q,$timeout,$http) {
     function login(username, password) {
         // crear una nueva instancia de "deferred"
         var deferred = $q.defer();
-        
+        var data = {
+            username: username,
+            password: password
+        };
         // enviar un "POST" al servidor
-        $http.post('http://volderpayoda.sytes.net/api/usuarios/login', {username: username, password: password})
+        $http.post('http://volderpayoda.sytes.net/api/usuarios/login', JSON.stringify(data))
         // manejar éxito
-        .then(function(data, status) {
-            return true;
-            if (status === 200 && data.status) {
+        .then(function(data) {
+            
+            if (data.status) {
                 return true;
                 user = true;
                 deferred.resolve();
