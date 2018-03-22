@@ -4,7 +4,7 @@ var Account = require('../models/account');
 var router = express.Router();
 
 router.all('*', function(req, res, next) {
-    Console.log('HIT');
+    console.log('HIT');
     next();
 })
 
