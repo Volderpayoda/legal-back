@@ -73,8 +73,8 @@ app.factory('AuthService', function () {
   
     return ({
       isLoggedIn: isLoggedIn,
-      getUserStatus: getUserStatus
-      /*login: login,
+      /*getUserStatus: getUserStatus
+      login: login,
       logout: logout,
       register: register*/
     });
