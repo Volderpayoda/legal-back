@@ -18,7 +18,7 @@ app.factory('AuthService', function () {
             return false;
         }
     }
-/*
+
     function login(username, password) {
         // crear una nueva instancia de "deferred"
         var deferred = $q.defer();
@@ -73,8 +73,8 @@ app.factory('AuthService', function () {
   
     return ({
       isLoggedIn: isLoggedIn,
-      /*getUserStatus: getUserStatus
       login: login,
+      /*getUserStatus: getUserStatus,
       logout: logout,
       register: register*/
     });
