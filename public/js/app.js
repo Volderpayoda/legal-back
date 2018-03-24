@@ -36,7 +36,7 @@ $stateProvider
         controller:"modifOrdenanzasCtrl",           
         })
 ;
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/login');
 });
 /*
 app.controller('logout-ctrl', function($scope, $state, AuthService){
