@@ -17,9 +17,7 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
             //$scope.disabled = false;
             //$scope.loginForm = {};
         })
-        .catch(function(){
-            $scope.msg ="error";
-        });
+        $scope.msg="hola"
 
   };
 });
