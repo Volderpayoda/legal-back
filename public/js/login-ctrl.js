@@ -6,18 +6,18 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
         $scope.error = false;
         $scope.disabled = true;
         // call login from service
-        AuthService.login($scope.loginForm.username, $scope.loginForm.password).then(function () {
+        AuthService.login($scope.loginForm.username, $scope.loginForm.password).success(function () {
             $scope.msg="aca";
             $state.go('home');
             $scope.disabled = false;
             $scope.loginForm = {};
-        }), function () {
+        })
+        .error(function () {
             $scope.error = true;
             $scope.errorMessage = "Invalid username and/or password";
             $scope.disabled = false;
             $scope.loginForm = {};
-        };
-        $scope.disabled = false;
+        });
 
   };
 });
