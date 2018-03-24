@@ -11,13 +11,12 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
             $state.go('home');
             $scope.disabled = false;
             $scope.loginForm = {};
-        }, function () {
+        }).catch(function () {
             //$scope.error = true;
             $scope.msg = "Invalid username and/or password";
             //$scope.disabled = false;
             //$scope.loginForm = {};
         })
-        $scope.msg="hola"
 
   };
 });
