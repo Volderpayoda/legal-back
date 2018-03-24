@@ -40,7 +40,17 @@ app.factory('AuthService', function ($q,$timeout,$http) {
     }
 
     function getUserStatus() {
-        return user;
+        return $http.get('http://volderpayoda.sytes.net/api/usuarios/status')
+        .then(function(response){
+            if(response.data.status) {
+                user = true;
+            } else {
+                user = false;
+            }
+        }, function() {
+            user = false;
+        }
+    )
     }
 
     function logout() {
