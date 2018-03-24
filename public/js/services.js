@@ -1,10 +1,5 @@
 app.factory('AuthService', function ($q,$timeout,$http) {
-    var data = {
-        holaMundo: function(){
-            return true;
-        }
-    }
-   
+  
     // crear variable "usuario"
     var user = null;
 
