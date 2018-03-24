@@ -1,7 +1,7 @@
 <div class="col-md-4">
     <h1>{{ msg }}</h1>
     <h1>Login</h1>
-    <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+    <div ng-show="{{error}}">{{errorMessage}}</div>
     <form class="form" ng-submit="login()">
       <div class="form-group">
         <label>Username</label>

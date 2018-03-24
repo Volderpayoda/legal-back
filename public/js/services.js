@@ -32,33 +32,13 @@ app.factory('AuthService', function ($q,$timeout,$http) {
                 deferred.resolve();
             } else {
                 user = false; 
-                deferred.reject();
+                deferred.reject()
             }
         }), function(data, response){
-           user = false; 
-           deferred.reject(); 
+           user = false;
+           deferred.reject() 
         };
 
-        // enviar un "POST" al servidor
-        /*$http.post('http://volderpayoda.sytes.net/api/usuarios/login', JSON.stringify(data))
-        // manejar éxito
-        .then(function() {
-            return true;
-            if (status === 200 && data.status) {
-                user = true;
-                deferred.resolve();
-                
-            } else {
-                user = false;
-                deferred.reject();
-            }
-        }), function() {
-            return false;
-            user = false;
-            deferred.reject();
-        };
-*/
-        // devuelve objeto "promise"
         return deferred.promise;
     }
 
