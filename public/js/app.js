@@ -49,10 +49,12 @@ $stateProvider
 app.run(function($rootScope, $state, AuthService){
     $rootScope.$on('$stateChangeStart',
     function(event, next, current){
-        if (AuthService.isLoggedIn() === false && next.access.restricted) {
-            event.preventDefault();
-            $state.go('login');
-        }
+        AuthService.getUserStatus().then(function() {
+            if (AuthService.isLoggedIn() === false && next.access.restricted) {
+                event.preventDefault();
+                $state.go('login');
+            }
+        })
     }
 );
 });
