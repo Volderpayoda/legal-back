@@ -17,7 +17,7 @@ $stateProvider
         url: '/home',
         templateUrl: 'templates/home.html',
         controller:'logout-ctrl',
-        access: {restricted: false}
+        access: {restricted: true}
         })
     .state('ordenanzas', {
         url: '/ordenanzas',
@@ -43,7 +43,7 @@ $stateProvider
         access: {restricted: true}           
         })
 ;
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/login');
 });
 
 app.run(function($rootScope, $state, AuthService){
