@@ -5,44 +5,55 @@ $stateProvider
     .state('login', {
         url:'/login',
         templateUrl: 'templates/login.html',
-        controller: 'login-ctrl'
+        controller: 'login-ctrl',
+        access: {restricted: false}
         })
     .state('logout', {
         url:'/logout',
-        controller: 'logout-ctrl'
+        controller: 'logout-ctrl',
+        access: {restricted: true}
     })
     .state('home', {
         url: '/home',
         templateUrl: 'templates/home.html',
-        controller:'logout-ctrl'
+        controller:'logout-ctrl',
+        access: {restricted: true}
         })
     .state('ordenanzas', {
         url: '/ordenanzas',
         templateUrl: 'templates/ordenanzas.html',
-        controller:"ordenanzas-ctrl"      
+        controller:"ordenanzas-ctrl",
+        access: {restricted: true}      
         })
     .state('submit', {
         url: '/submit',
-        templateUrl: 'templates/submit.html'
+        templateUrl: 'templates/submit.html',
+        access: {restricted: true}
         })
     .state('alta-ordenanzas', {
         url: '/alta-ordenanzas',
         templateUrl: 'templates/alta-ordenanzas.html',
-        controller:"altaOrdenanzasCtrl"
+        controller:"altaOrdenanzasCtrl",
+        access: {restricted: true}
         })
     .state('modif-ordenanzas', {
         url: '/modif-ordenanzas',
         templateUrl: 'templates/modif-ordenanzas.html',
-        controller:"modifOrdenanzasCtrl",           
+        controller:"modifOrdenanzasCtrl",
+        access: {restricted: true}           
         })
 ;
     $urlRouterProvider.otherwise('/login');
 });
-/*
-app.controller('logout-ctrl', function($scope, $state, AuthService){
-    $scope.logout = function(){
-        AuthService.logout().then(function(){
+
+app.run(function($rootScope, $state, AuthService){
+    $rootScope.$on('$stateChangeStart',
+    function(event, next, current){
+        if (next.access.restricted && AuthService.isLoggedIn() === false) {
             $state.go('login');
-        });
-    };
-});*/
+            $state.reload()
+            
+        }
+    }
+)
+})
