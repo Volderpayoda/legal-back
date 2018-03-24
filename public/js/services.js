@@ -53,10 +53,10 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         .then(function (data) {
             user = false;
             deferred.resolve();
-        }), function(data) {
+        }, function(data) {
             user = false;
             deferred.reject();
-        };
+        });
 
         //devuelve el objeto "promise"
         return deferred.promise;
