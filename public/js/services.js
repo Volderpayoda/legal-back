@@ -6,7 +6,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
     }
    
     // crear variable "usuario"
-    var user = false;
+    var user = null;
 
     // prepara las funciones de usuario para usar en los controladores
     function isLoggedIn() {
