@@ -50,6 +50,8 @@ app.run(function($rootScope, $state, AuthService){
     $rootScope.$on('$stateChangeStart',
     function(event, next, current){
         if (AuthService.isLoggedIn() === false && next.access.restricted) {
+            alert("redirigiendo");
+            
             return $state.go('login');
         }
     }
