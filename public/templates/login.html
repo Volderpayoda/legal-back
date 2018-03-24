@@ -1,3 +1,4 @@
+<!--
 <div class="col-md-4">
     <h1>{{ msg }}</h1>
     <h1>Login</h1>
@@ -16,3 +17,22 @@
         </div>
     </form>
   </div>
+-->
+<div class="container">
+  <div class="row">
+    <div class="form-login">
+      <h4 align="center">¡Bienvenido!</h4>
+      <div class="alert alert-danger">{{errorMessage}}</div>
+      <form class="form" ng-submit="login()">
+        <input type="text" class="form-control input-sm chat-input" name="username" ng-model="loginForm.username" placeholder="nombre de usuario" required>
+        </br>
+        <input type="text" class="form-control input-sm chat-input" naame="password" ng-model="loginForm.password" placeholder="contraseña" required>
+        </br>
+        <div class="group-btn" align="center">
+          <button type="submit" class="botonEnviar" ng-disabled="disabled"><a>Login</a><i class="fa fa-sign-in"></i></button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
