@@ -51,8 +51,7 @@ app.run(function($rootScope, $state, AuthService){
     function(event, next, current){
         if (AuthService.isLoggedIn() === false && next.access.restricted) {
             alert("redirigiendo");
-            
-            return $state.go('login');
+            $state.go('home');
         }
     }
 );
