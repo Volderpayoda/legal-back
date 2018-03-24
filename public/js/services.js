@@ -26,17 +26,17 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             password: password
         };
         $http.post("http://volderpayoda.sytes.net/api/usuarios/login", JSON.stringify(data))
-        .then(function(data, response){
+        .then(function(response){
             if (response.status === 200){
-                user =true;
-                deferred.resolve();
+                user = true;
+                deferred.resolve()
             } else {
                 user = false; 
-                deferred.reject();
+                deferred.reject()
             }
-        }), function(data, response){
+        }), function(response){
            user = false; 
-           deferred.reject(); 
+           deferred.reject()
         };
 
         // enviar un "POST" al servidor
