@@ -28,7 +28,6 @@ router.post('/login', function(req, res, next){
             return res.status(401).json({
                 err: info
             });
-            console.log(res.status);
         }
         req.logIn(user, function(err){
             if (err) {
@@ -39,7 +38,7 @@ router.post('/login', function(req, res, next){
             res.status(200).json({
                 status: 'Inicio de sesión correcto'
             });
-            console.log(res.status);
+            console.log(res);
         }); 
     })(req, res, next);
 })
