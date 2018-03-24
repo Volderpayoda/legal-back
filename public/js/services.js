@@ -34,7 +34,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
                 user = false; 
                 deferred.reject();
             }
-        }), function(data, response){
+        }), function(data){
            user = false; 
            deferred.reject(); 
         };
