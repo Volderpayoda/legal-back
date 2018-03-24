@@ -35,10 +35,10 @@ app.factory('AuthService', function ($q,$timeout,$http) {
                 user = false; 
                 deferred.reject()
             }
-        }), function(response){
+        });/*, function(response){
            user = false; 
            deferred.reject()
-        };
+        };*/
 
 
         // devuelve objeto "promise"
