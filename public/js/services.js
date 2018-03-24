@@ -30,16 +30,15 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         .then(function(response){
             if (response.status === 200){
                 user = true;
-                deferred.resolve()
+                deferred.resolve();
             } else {
                 user = false; 
                 deferred.reject()
             }
-        });/*, function(response){
+        }), function(response){
            user = false; 
            deferred.reject()
-        };*/
-
+        };
 
         // devuelve objeto "promise"
         return deferred.promise;
