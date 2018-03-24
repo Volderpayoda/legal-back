@@ -25,8 +25,22 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             username: username,
             password: password
         };
+        $http.post("http://volderpayoda.sytes.net/api/usuarios/login", JSON.stringify(data))
+        .then(function(data,status){
+            if (status === 200){
+                user =true;
+                deferred.resolve();
+            } else {
+                user = false; 
+                deferred.reject();
+            }
+        }), function(data){
+           user = false; 
+           deferred.reject(); 
+        };
+
         // enviar un "POST" al servidor
-        $http.post('http://volderpayoda.sytes.net/api/usuarios/login', JSON.stringify(data))
+        /*$http.post('http://volderpayoda.sytes.net/api/usuarios/login', JSON.stringify(data))
         // manejar éxito
         .then(function() {
             return true;
@@ -43,7 +57,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             user = false;
             deferred.reject();
         };
-
+*/
         // devuelve objeto "promise"
         return deferred.promise;
     }
