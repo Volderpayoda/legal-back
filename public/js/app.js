@@ -50,9 +50,8 @@ app.run(function($rootScope, $state, AuthService){
     $rootScope.$on('$stateChangeStart',
     function(event, next, current){
         if (AuthService.isLoggedIn() === false && next.access.restricted) {
-            $state.go('login');
+            return $state.go('login');
         }
-        $state.reload();
     }
 );
 });
