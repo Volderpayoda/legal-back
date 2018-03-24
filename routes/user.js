@@ -28,6 +28,7 @@ router.post('/login', function(req, res, next){
             return res.status(401).json({
                 err: info
             });
+            console.log(res.status);
         }
         req.logIn(user, function(err){
             if (err) {
