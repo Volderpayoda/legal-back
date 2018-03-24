@@ -53,5 +53,5 @@ app.run(function($rootScope, $state, AuthService){
             $state.go('login');
         }
     }
-)
-})
+);
+});
