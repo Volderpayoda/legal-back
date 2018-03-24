@@ -38,7 +38,6 @@ router.post('/login', function(req, res, next){
             res.status(200).json({
                 status: 'Inicio de sesión correcto'
             });
-            console.log(res);
         }); 
     })(req, res, next);
 })
