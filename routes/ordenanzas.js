@@ -4,6 +4,14 @@ var db = require("../db/index.js");
 
 var router = express.Router();
 
+router.all('*', function(req, res, next){
+  if(req.user) {
+    next();
+  } else {
+    res.sendStatus(403)
+  }
+})
+
 router.get("/", function(req, res, next){
   db.query('select * from ordenanzas', function(err, results) {
     if(err) {
