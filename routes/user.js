@@ -3,11 +3,6 @@ var passport = require('passport');
 var Account = require('../models/account');
 var router = express.Router();
 
-router.all('*', function(req, res, next) {
-    console.log('HIT');
-    next();
-})
-
 router.post('/register', function(req, res){
     Account.register(new Account({ username: req.body.username}), req.body.password, function(err, account) {
         if (err) {
