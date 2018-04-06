@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.post('/register', function(req, res){
     if (req.body.secret != process.env.SOMESECRET) {
-        res.sendStatus(403)
+        return res.sendStatus(403);
     }
     Account.register(new Account({ username: req.body.username}), req.body.password, function(err, account) {
         if (err) {
