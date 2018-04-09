@@ -1,5 +1,7 @@
 var app =angular.module("legal",['ui.router']);
 
+$scope.nav = AuthService.isLoggedIn();
+
 app.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
     .state('login', {

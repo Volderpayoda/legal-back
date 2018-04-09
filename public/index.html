@@ -31,7 +31,8 @@
   </head>
 
   <body ng-app="legal">
-      <nav class="navbar navbar-default" role="navigation" ng-init="nav = AuthService.IsLoggedIn()">
+    <p>{{ nav }}</p>
+      <nav class="navbar navbar-default" role="navigation" ng-show="AuthService.IsLoggedIn()">
         <div ng-if="nav">
         <div class="container-fluid">
           <div class="navbar-header">
