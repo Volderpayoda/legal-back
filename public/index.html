@@ -31,8 +31,7 @@
   </head>
 
   <body ng-app="legal">
-    <div ng-controller="nav-ctrl">
-      <nav class="navbar navbar-default" role="navigation" ng-show="nav">
+      <nav class="navbar navbar-default" role="navigation" ng-show="AuthService.IsLoggedIn()">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
@@ -51,7 +50,6 @@
           </div>
         </div>
       </nav>
-    </div>
     <div class="container"><ui-view></ui-view></div>
   </body>
 </html>
