@@ -1,7 +1,5 @@
 var app =angular.module("legal",['ui.router']);
 
-$scope.nav = AuthService.isLoggedIn();
-
 app.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
     .state('login', {
@@ -48,13 +46,15 @@ $stateProvider
     $urlRouterProvider.otherwise('/login');
 });
 
-app.run(function($rootScope, $state, AuthService){
+app.run(function($rootScope, $state, AuthService, $scope){
     $rootScope.$on('$stateChangeStart',
     function(event, next, current){
         AuthService.getUserStatus().then(function() {
             if (AuthService.isLoggedIn() === false && next.access.restricted) {
                 event.preventDefault();
                 $state.go('login');
+            } else {
+                $scope.nav=true;
             }
         })
     }
