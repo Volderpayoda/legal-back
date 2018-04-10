@@ -10,6 +10,7 @@ app.controller('login-ctrl', function ($scope, $state, AuthService) {
             $state.go('home');
             $scope.disabled = false;
             $scope.loginForm = {};
+            $scope.showNav=true;
         },function (error) {
             $scope.error = true;
             $scope.errorMessage = "Usuario y/o contraseña inválidos";
