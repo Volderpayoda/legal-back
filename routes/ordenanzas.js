@@ -13,7 +13,11 @@ router.all('*', function(req, res, next){
 })
 
 router.get("/", function(req, res, next){
-  db.query('select * from ordenanzas', function(err, results) {
+  var text = 'select * from ordenanzas, (select "subs_ordenanzas"."_idOrdenanza", string_agg("subsecretaria"."nombreSubsecretaria", '; ') from subs_ordenanzas, subsecretaria ' +
+  'where "subs_ordenanzas"."_idSubsecretaria" = "subsecretaria"."idSubsecretaria" ' +
+  'group by "subs_ordenanzas"."_idOrdenanza") as lista ' +
+  'where ordenanzas._id = "lista"."_idOrdenanza"';
+  db.query(text, function(err, results) {
     if(err) {
       return next(err);
     }
