@@ -270,3 +270,7 @@ label {
 #custom-search-input .glyphicon-search{
     font-size: 23px;
 }
+
+.login-box, .register-box {
+    width: 360px;
+    margin: 7% auto;
