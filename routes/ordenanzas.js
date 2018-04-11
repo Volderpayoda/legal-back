@@ -70,6 +70,7 @@ router.get("/:nroActSimple", function (req, res, next) {
       next(err);
       return;
     }
+    console.log(results.rows[0]);
     var ordenanza = {
       nroOrdenanza: results.rows[0].nroOrdenanza,
       tema: results.rows[0].tema,
