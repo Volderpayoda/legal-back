@@ -1,21 +1,18 @@
-
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Modificar ordenanzas</h1>
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input type="text" class="form-control input-lg" placeholder="N° de Actuación Simple" ng-model="nroActSimple" value="" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="search" ng-click="buscarOrdenanza(nroActSimple)">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+<div class="row">
+  <div class="col-md-12">
+    <h1>Modificar ordenanzas</h1>
+      <div id="custom-search-input">
+          <div class="input-group col-md-12">
+              <input type="text" class="form-control input-lg" placeholder="N° de Actuación Simple" ng-model="nroActSimple" value="" />
+              <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="search" ng-click="buscarOrdenanza(nroActSimple)">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </span>
+          </div>
+      </div>
+  </div>
+</div>
 <form class="formulario" align="center" ng-show="var">
     <fieldset>
         <div class="form-horizontal">
@@ -251,10 +248,9 @@
             </div>
         </div>
     <p></p>
-        <div class="col-md-12">
-            <input class="botonEnviar" ui-sref="submit" type="button" value="Modificar" ng-click="put(ordenanza)"/> 
-        </div>
-    </fieldset>
+    <div class="col-md-12">
+      <input class="botonEnviar" ui-sref="submit" type="button" value="Modificar" ng-click="put(ordenanza)"/> 
+    </div>
+  </fieldset>
 </form>
-
 <p></p>
