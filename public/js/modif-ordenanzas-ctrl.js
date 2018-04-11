@@ -2,11 +2,10 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.buscarOrdenanza = function(nroActSimple) {
     $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
    .then(function(response){
-       $scope.msg="hasta aca llego"
        $scope.ordenanza = response.data; 
        $scope.var = true;
    }, function(response){
-       $scope.ordenanza = "algo fallo";
+       $scope.ordenanza = "ERROR: Algo falló";
    });
 };
    $scope.put =  function(ordenanza) {

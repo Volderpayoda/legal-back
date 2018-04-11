@@ -59,16 +59,20 @@ router.post("/", function (req, res, next) {
 
 router.get("/:nroActSimple", function (req, res, next) {
   var nroActSimple = req.params.nroActSimple;
-  var text = 'select * from ordenanzas where "nroActSimple" = $1';
+  //var text = 'select * from ordenanzas where "nroActSimple" = $1';
+  var text = 'select * from ordenanzas, ' +
+  '(select array_agg("_idSubsecretaria") as sub from subs_ordenanzas ' +
+  'where "subs_ordenanzas"."_idOrdenanza"=$1) as arreglo ' +
+  'where ordenanzas._id = $1'
   var params = [nroActSimple];
   db.query(text, params, function(err, results){
     if (err) {
       next(err);
       return;
     }
-    console.log(results.rows);
     res.json(results.rows[0]);
   })
+  db.query
 });
 
 router.delete("/:id", function (req, res, next) {
