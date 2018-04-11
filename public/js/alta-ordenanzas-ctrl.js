@@ -1,6 +1,6 @@
 app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     var arr = new Array(28);
-    $scope.msg= ordenanza.arr[1]
+    $scope.msg= ordenanza
     $scope.postdata = function(ordenanza) {
         
         var data = {
