@@ -1,6 +1,5 @@
 app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
-    var arr = new Array(28);
-    $scope.msg= ordenanza
+
     $scope.postdata = function(ordenanza) {
         
         var data = {
@@ -26,7 +25,6 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data))
         .then(function(data){
-            $scope.msg = "hasta aca llego"
             $state.go('submit');    
         }), function(data){
         $scope.msg = "ERROR: No pudimos enviar tu ordenanza"}
