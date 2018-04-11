@@ -1,4 +1,4 @@
-app.controller("altaOrdenanzasCtrl", function($scope, $http, $state) {
+app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.postdata = function(ordenanza) {
         var data = {
             nroOrdenanza: ordenanza.nroOrdenanza, 
