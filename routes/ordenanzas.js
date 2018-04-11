@@ -84,9 +84,10 @@ router.get("/:nroActSimple", function (req, res, next) {
       sub2: null,
       sub3: null
     }
-    ordenanza.sub1 = results.rows[0].arreglo.includes(1) ? 1 : null;
-    ordenanza.sub2 = results.rows[0].arreglo.includes(2) ? 2 : null;
-    ordenanza.sub3 = results.rows[0].arreglo.includes(3) ? 3 : null;
+    var arr = results.rows[].arreglo
+    ordenanza.sub1 = arr.includes(1) ? 1 : null;
+    ordenanza.sub2 = arr.includes(2) ? 2 : null;
+    ordenanza.sub3 = arr.includes(3) ? 3 : null;
     console.log(ordenanza)
     res.json(ordenanza);
   })
