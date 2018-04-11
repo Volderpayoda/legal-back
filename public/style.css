@@ -30,7 +30,7 @@ label {
     border-radius: 5px
 
 }
-botonEnviar {
+.botonEnviar {
     background-color: #4CAF50; /*green*/
     border: none;
     color: white;
