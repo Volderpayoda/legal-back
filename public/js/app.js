@@ -75,7 +75,7 @@ $stateProvider
             },
             'content':{
                 templateUrl: 'templates/alta-ordenanzas.html',
-                controller:"altaOrdenanzasCtrl",
+                controller:"alta-ordenanzas-ctrl",
             }
         },
         access: {restricted: true}
@@ -91,7 +91,7 @@ $stateProvider
             },
             'content':{
                 templateUrl: 'templates/modif-ordenanzas.html',
-                controller:"modifOrdenanzasCtrl",
+                controller:"modif-ordenanzas-ctrl",
             }
         },
         access: {restricted: true}           
