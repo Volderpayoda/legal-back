@@ -25,11 +25,11 @@ $stateProvider
         url: '/home',
         views:{
             'nav':{
-                templateUrl: 'templates/nav.html'
+                templateUrl: 'templates/nav.html',
+                controller:'logout-ctrl'
             },
             'content':{
-                templateUrl: 'templates/home.html',
-                controller:'logout-ctrl'
+                templateUrl: 'templates/home.html'
             }
         }, 
         access: {restricted: true}
@@ -39,7 +39,8 @@ $stateProvider
         url: '/ordenanzas',
         views:{
             'nav':{
-                templateUrl:'templates/nav.html'
+                templateUrl:'templates/nav.html',
+                controller:'logout-ctrl'
             },
             'content':{
                 templateUrl: 'templates/ordenanzas.html',
@@ -54,7 +55,8 @@ $stateProvider
         views:{
             'nav':
             {
-                templateUrl:'templates/nav.html'
+                templateUrl:'templates/nav.html',
+                controller:'logout-ctrl'
             },
             'content':{
                 templateUrl: 'templates/submit.html',
@@ -68,7 +70,8 @@ $stateProvider
         views:{
             'nav':
             {
-                templateUrl:'templates/nav.html'
+                templateUrl:'templates/nav.html',
+                controller:'logout-ctrl'
             },
             'content':{
                 templateUrl: 'templates/alta-ordenanzas.html',
@@ -83,7 +86,8 @@ $stateProvider
         views:{
             'nav':
             {
-                templateUrl:'templates/nav.html'
+                templateUrl:'templates/nav.html',
+                controller:'logout-ctrl'
             },
             'content':{
                 templateUrl: 'templates/modif-ordenanzas.html',
