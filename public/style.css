@@ -30,8 +30,8 @@ label {
     border-radius: 5px
 
 }
-/*.botonEnviar {
-    background-color: #4CAF50; green
+botonEnviar {
+    background-color: #4CAF50; /*green*/
     border: none;
     color: white;
     padding: 15px 32px;
@@ -42,7 +42,7 @@ label {
     margin-top: 15px;
     width: 100%
 }
-*/
+
 .img-home {
   text-align:center;
 }
