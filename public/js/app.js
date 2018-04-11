@@ -6,7 +6,6 @@ $stateProvider
         url:'/login',
         views:{
             'nav':{
-
             },
             'content':{
                 templateUrl: 'templates/login.html',
