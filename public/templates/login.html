@@ -7,9 +7,11 @@
       <h4 align="center">¡Bienvenido!</h4>
       <div class="alert alert-danger" ng-show="error">{{ errorMessage }}</div>
       <form class="form" ng-submit="login()">
-        <input type="text" class="form-control input-sm chat-input" name="username" ng-model="loginForm.username" placeholder="nombre de usuario" required>
+        <input type="text" class="form-control input-sm chat-input" name="username" ng-model="loginForm.username" placeholder="nombre de usuario" size="30" required>
+        <span class="glyphicon glyphicon-user"></span>
         </br>
-        <input type="password" class="form-control input-sm chat-input" name="password" ng-model="loginForm.password" placeholder="contraseña" required>
+        <input type="password" class="form-control input-sm chat-input" name="password" ng-model="loginForm.password" placeholder="contraseña" size="30" required>
+        <span class="glyphicon glyphicon-lock"></span>
         </br>
         <div class="group-btn" align="center">
           <button type="submit" class="botonEnviar" ng-disabled="disabled">Ingresar</button>
