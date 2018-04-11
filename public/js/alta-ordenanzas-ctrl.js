@@ -1,5 +1,7 @@
 app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
+    var arr = new Array(28);
     $scope.postdata = function(ordenanza) {
+        
         var data = {
             nroOrdenanza: ordenanza.nroOrdenanza, 
             tema: ordenanza.tema, 
@@ -20,7 +22,7 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
                 ordenanza.sub22, ordenanza.sub23, ordenanza.sub24,
                 ordenanza.sub25, ordenanza.sub26, ordenanza.sub27,]
         };
-    
+    $scope.msg= ordenanza.arr[1]
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data))
         .then(function(data){
             $scope.msg = "hasta aca llego"
