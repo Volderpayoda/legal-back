@@ -84,7 +84,7 @@ router.get("/:nroActSimple", function (req, res, next) {
       sub2: null,
       sub3: null
     }
-    var arr = results.rows.sub;
+    var arr = results.rows[0].sub;
     console.log(arr);
     ordenanza.sub1 = arr.includes(1) ? 1 : null;
     ordenanza.sub2 = arr.includes(2) ? 2 : null;
