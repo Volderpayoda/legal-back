@@ -166,7 +166,26 @@ router.put("/:id", function (req, res, next) {
       next(err);
       return err;
     }
-    console.log(results);
+    text = 'delete from subs_ordenanzas where "_idOrdenanza" = $1';
+    params = [_id];
+    db.query(text, params, function(err, results){
+      if (err) {
+        next(err);
+        return;
+      }
+      ordenanza.sub.forEach(function(item){
+        if(item != null) {
+          text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
+          var params = [_id, item];
+          db.query(text, params, function(err, results){
+            if (err) {
+              next(err);
+              return;
+            }
+          })      
+        }
+      });      
+    })
     res.sendStatus(201);
   })
 })
