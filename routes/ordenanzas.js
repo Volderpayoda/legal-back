@@ -62,8 +62,8 @@ router.get("/:nroActSimple", function (req, res, next) {
   //var text = 'select * from ordenanzas where "nroActSimple" = $1';
   var text = 'select * from ordenanzas, ' +
   '(select array_agg("_idSubsecretaria") as sub from subs_ordenanzas ' +
-  'where "subs_ordenanzas"."_idOrdenanza"=$1) as arreglo ' +
-  'where ordenanzas._id = $1'
+  'where "subs_ordenanzas"."nroActsimple"=$1) as arreglo ' +
+  'where ordenanzas."nroActSimple" = $1'
   var params = [nroActSimple];
   db.query(text, params, function(err, results){
     if (err) {
