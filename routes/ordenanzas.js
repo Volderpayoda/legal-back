@@ -70,7 +70,24 @@ router.get("/:nroActSimple", function (req, res, next) {
       next(err);
       return;
     }
-    res.json(results.rows[0]);
+    var ordenanza = {
+      nroOrdenanza: results.rows[0].nroOrdenanza,
+      tema: results.rows[0].tema,
+      promulgacion: results.rows[0].promulgacion,
+      fechaPromulgacion: results.rows[0].fechaPromulgacion,
+      nroPromulgacion: results.rows[0].nroPromulgacion,
+      observacion: results.rows[0].observacion,
+      nroActSimple: results.rows[0].nroActSimple,
+      presento: results.rows[0].presento,
+      sub1: null,
+      sub2: null,
+      sub3: null
+    }
+    ordenanza.sub1 = results.rows[0].arreglo.includes(1) ? 1 : null;
+    ordenanza.sub2 = results.rows[0].arreglo.includes(2) ? 2 : null;
+    ordenanza.sub3 = results.rows[0].arreglo.includes(3) ? 3 : null;
+    console.log(ordenanza)
+    res.json(ordenanza);
   })
   db.query
 });
