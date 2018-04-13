@@ -14,6 +14,7 @@ router.all('*', function(req, res, next){
 
 router.get("/", function(req, res, next){
   var separador = "'; '";
+  var blanco = "' '";
   var text = 'select * from ordenanza, ' +
   '(select sub_ordenanza.nro_actsimple, string_agg(subsecretaria.nombre_subsecretaria, ' + separador + ') as subsecretaria ' +
   'from sub_ordenanza, subsecretaria ' +
@@ -21,7 +22,7 @@ router.get("/", function(req, res, next){
   'group by sub_ordenanza.nro_actsimple) as lista ' +
   'where ordenanza.nro_actsimple = lista.nro_actsimple ' + 
   'union ' + 
-  'select *, " " as subsecretaria from ordenanza ' + 
+  'select *, ' + blanco + 'as subsecretaria from ordenanza ' + 
   'where ordenanza.nro_actsimple not in ' +
    '(select distinct nro_actsimple from sub_ordenanza)';
   /*var text = 'select * from ordenanzas, (select "subs_ordenanzas"."_idOrdenanza", string_agg("subsecretaria"."nombreSubsecretaria", ' + separador + ') as subsecretaria ' + 
