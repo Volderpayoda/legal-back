@@ -3,12 +3,12 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.postdata = function(ordenanza) {
         
         var data = {
-            nroOrdenanza: ordenanza.nroOrdenanza, 
+            nroOrdenanza: ordenanza.nro_ordenanza, 
             tema: ordenanza.tema, 
             promulgacion: ordenanza.promulgacion, 
-            fechaPromulgacion: ordenanza.fechaPromulgacion, 
-            nroPromulgacion: ordenanza.nroPromulgacion, 
-            nroActSimple: ordenanza.nroActSimple, 
+            fechaPromulgacion: ordenanza.fecha_promulgacion, 
+            nroPromulgacion: ordenanza.nro_promulgacion, 
+            nroActSimple: ordenanza.nro_actsimple, 
             origen: ordenanza.origen, 
             reglamentada: ordenanza.reglamentada,
             sub:[ordenanza.sub1, ordenanza.sub2, ordenanza.sub3,
