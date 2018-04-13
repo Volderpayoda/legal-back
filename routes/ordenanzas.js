@@ -42,7 +42,7 @@ router.post("/", function (req, res, next) {
   '(nro_actsimple, nro_ordenanza, nro_promulgacion, origen, promulgacion, reglamentada, ' +
   'fecha_promulgacion, tema)' + 
   "values ($1, $2, $3, $4, $5, $6, $7, $8) returning nro_actsimple";
-  var params = [ordenanza.nroActSimple, ordenanza.nroOrdenanza, ordenanza.nroPromulgacion, ordenanza.origen, ordenanza.promulgacion, ordenanza.reglamentada, ordenanza.fechaPromulgacion, ordenanza.tema];
+  var params = [ordenanza.nro_actsimple, ordenanza.nro_ordenanza, ordenanza.nro_promulgacion, ordenanza.origen, ordenanza.promulgacion, ordenanza.reglamentada, ordenanza.fecha_promulgacion, ordenanza.tema];
   /*var text = 'insert into ordenanzas("nroOrdenanza", "tema", "promulgacion", "fechaPromulgacion", "nroPromulgacion", "observacion", "nroActSimple", "presento", "origen", "reglamentada") ' +
   "values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning _id";
   var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada];
