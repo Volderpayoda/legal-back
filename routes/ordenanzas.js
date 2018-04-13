@@ -38,19 +38,28 @@ router.post("/", function (req, res, next) {
   console.log(req.body)
   console.log(req.body.sub[0]);
   var _id;
-  var text = 'insert into ordenanzas("nroOrdenanza", "tema", "promulgacion", "fechaPromulgacion", "nroPromulgacion", "observacion", "nroActSimple", "presento", "origen", "reglamentada") ' +
+  var text = 'insert into ordenanza' +
+  '(nro_actsimple, nro_ordenanza, nro_promulgacion, origen, promulgacion, reglamentada, ' +
+  'fecha_promulgacion, tema)' + 
+  "values ($1, $2, $3, $4, $5, $6, $7, $8) returning nro_actsimple";
+  var params = [ordenanza.nroActSimple, ordenanza.nroOrdenanza, ordenanza.nroPromulgacion, ordenanza.origen, ordenanza.promulgacion, ordenanza.reglamentada, ordenanza.fechaPromulgacion, ordenanza.tema];
+  /*var text = 'insert into ordenanzas("nroOrdenanza", "tema", "promulgacion", "fechaPromulgacion", "nroPromulgacion", "observacion", "nroActSimple", "presento", "origen", "reglamentada") ' +
   "values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning _id";
   var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada];
+  */
   db.query(text, params, function(err, results){
       if (err) {
           next(err);
           return;
       }
-      _id = results.rows[0]._id;
+      var nro_actsimple = results.rows[0].nro_actsimple;
       ordenanza.sub.forEach(function(item){
         if(item != null) {
-          text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
+          text = 'insert into sub_ordenanza(nro_actsimple, id_subsecretaria) values ($1, $2)';
+          var params = [nro_actsimple, item]
+          /*text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
           var params = [_id, item];
+          */
           db.query(text, params, function(err, results){
             if (err) {
               next(err);
