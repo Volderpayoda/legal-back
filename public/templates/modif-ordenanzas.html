@@ -14,11 +14,11 @@
         <div class="form-horizontal">
             <div class="col-md-12">
                 <label>Número de Actuación Simple: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.nroActSimple" value="{{ordenanza.nroActSimple}}"/>
+                <input class="form-control" type="text" ng-model="ordenanza.nro_actsimple" value="{{ordenanza.nro_actsimple}}"/>
             </div>
             <div class="col-md-12">
                 <label>Número de Ordenanza: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.nroOrdenanza" value="{{ordenanza.nroOrdenanza}}"/>
+                <input class="form-control" type="text" ng-model="ordenanza.nroOrdenanza" value="{{ordenanza.nro_ordenanza}}"/>
             </div>
             <div class="col-md-12">
                 <label>Tema: </label>
@@ -31,16 +31,12 @@
             </div>
             <div class="col-md-12">
                 <label>Fecha de Promulgación: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.fechaPromulgacion" value="{{ordenanza.fechaPromulgacion}}"/>
+                <input class="form-control" type="text" ng-model="ordenanza.fechaPromulgacion" value="{{ordenanza.fecha_promulgacion}}"/>
             </div>
             <div class="col-md-12">
-                <label>Observacion </label>
-                <input class="form-control" type="text" ng-model="ordenanza.observacion" value="{{ordenanza.observacion}}"/>
-            </div>
-            <div class="col-md-12">
-                    <label>Presentó: </label>
-                    <div><label class="radio-inline"><input type="radio" value="Ejecutivo" ng-model="ordenanza.presento">Ejecutivo</label></div>
-                    <div><label class="radio-inline"><input type="radio" value="Legislativo" ng-model="ordenanza.presento">Legislativo</label></div>
+                    <label>Poder que la presenta: </label>
+                    <div><label class="radio-inline"><input type="radio" value="Ejecutivo" ng-model="ordenanza.origen">Ejecutivo</label></div>
+                    <div><label class="radio-inline"><input type="radio" value="Legislativo" ng-model="ordenanza.origen">Legislativo</label></div>
             </div>
             <div class="col-md-12">
                     <label>Reglamentada: </label>
