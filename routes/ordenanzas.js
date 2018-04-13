@@ -16,7 +16,7 @@ router.get("/", function(req, res, next){
   var separador = "'; '";
   var blanco = "' '";
   var text = 'select * from ordenanza left join ' +
-  '(select sub_ordenanza.nro_actsimple as nas, string_agg(subsecretaria.nombre_subsecretaria, ' + separador + ') as subsecretaria ' +
+  '(select sub_ordenanza.nro_actsimple, string_agg(subsecretaria.nombre_subsecretaria, ' + separador + ') as subsecretaria ' +
   'from sub_ordenanza, subsecretaria ' +
   'where sub_ordenanza.id_subsecretaria = subsecretaria.id_subsecretaria ' +
   'group by sub_ordenanza.nro_actsimple) as lista ' +
