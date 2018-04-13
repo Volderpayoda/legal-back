@@ -15,9 +15,8 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
        promulgacion: ordenanza.promulgacion, 
        fechaPromulgacion: ordenanza.fechaPromulgacion, 
        nroPromulgacion: ordenanza.nroPromulgacion, 
-       observacion: ordenanza.observacion, 
        nroActSimple: ordenanza.nroActSimple, 
-       presento: ordenanza.presento,
+       origen: ordenanza.origen,
        sub: { 
            num1: ordenanza.sub1,
            num2: ordenanza.sub2,
