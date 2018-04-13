@@ -10,12 +10,12 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
 };
    $scope.put =  function(ordenanza) {
        var data = {
-       nroOrdenanza: ordenanza.nroOrdenanza, 
+       nroOrdenanza: ordenanza.nro_ordenanza, 
        tema: ordenanza.tema, 
        promulgacion: ordenanza.promulgacion, 
-       fechaPromulgacion: ordenanza.fechaPromulgacion, 
-       nroPromulgacion: ordenanza.nroPromulgacion, 
-       nroActSimple: ordenanza.nroActSimple, 
+       fechaPromulgacion: ordenanza.fecha_promulgacion, 
+       nroPromulgacion: ordenanza.nro_promulgacion, 
+       nroActSimple: ordenanza.nro_actsimple, 
        origen: ordenanza.origen,
        sub: { 
            num1: ordenanza.sub1,
