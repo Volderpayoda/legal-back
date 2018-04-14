@@ -163,7 +163,7 @@ router.delete("/:id", function (req, res, next) {
 router.put("/:nro_actsimple", function (req, res, next) {
   var nro_actsimple = req.params.nro_actsimple;
   var ordenanza = req.body;
-  var text = 'update ordenanzas set ' + 
+  var text = 'update ordenanza set ' + 
       'nro_ordenanza = $1, tema = $2, promulgacion = $3, fecha_promulgacion = $4, nro_promulgacion = $5, origen = $6, reglamentada = $7' + 
       'where nro_actsimple = $8';
   var params = [ordenanza.nro_ordenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fecha_promulgacion, ordenanza.nro_promulgacion, ordenanza.origen, ordenanza.reglamentada, nro_actsimple];
