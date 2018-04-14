@@ -125,35 +125,36 @@ router.get("/:nro_actsimple", function (req, res, next) {
       sub26: null,
       sub27: null,
     }
-    console.log(results.rows);
+    if (results.rows.sub != null) {
     var arr = results.rows[0].sub;
-    ordenanza.sub1 = arr.includes(1) ? 1 : null;
-    ordenanza.sub2 = arr.includes(2) ? 2 : null;
-    ordenanza.sub3 = arr.includes(3) ? 3 : null;
-    ordenanza.sub4 = arr.includes(4) ? 4 : null;
-    ordenanza.sub5 = arr.includes(5) ? 5 : null;
-    ordenanza.sub6 = arr.includes(6) ? 6 : null;
-    ordenanza.sub7 = arr.includes(7) ? 7 : null;
-    ordenanza.sub8 = arr.includes(8) ? 8 : null;
-    ordenanza.sub9 = arr.includes(9) ? 9 : null;
-    ordenanza.sub10 = arr.includes(10) ? 10 : null;
-    ordenanza.sub11 = arr.includes(11) ? 11 : null;
-    ordenanza.sub12 = arr.includes(12) ? 12 : null;
-    ordenanza.sub13 = arr.includes(13) ? 13 : null;
-    ordenanza.sub14 = arr.includes(14) ? 14 : null;
-    ordenanza.sub15 = arr.includes(15) ? 15 : null;
-    ordenanza.sub16 = arr.includes(16) ? 16 : null;
-    ordenanza.sub17 = arr.includes(17) ? 17 : null;
-    ordenanza.sub18 = arr.includes(18) ? 18 : null;
-    ordenanza.sub19 = arr.includes(19) ? 19 : null;
-    ordenanza.sub20 = arr.includes(20) ? 20 : null;
-    ordenanza.sub21 = arr.includes(21) ? 21 : null;
-    ordenanza.sub22 = arr.includes(22) ? 22 : null;
-    ordenanza.sub23 = arr.includes(23) ? 23 : null;
-    ordenanza.sub24 = arr.includes(24) ? 24 : null;
-    ordenanza.sub25 = arr.includes(25) ? 25 : null;
-    ordenanza.sub26 = arr.includes(26) ? 26 : null;
-    ordenanza.sub27 = arr.includes(27) ? 27 : null;
+      ordenanza.sub1 = arr.includes(1) ? 1 : null;
+      ordenanza.sub2 = arr.includes(2) ? 2 : null;
+      ordenanza.sub3 = arr.includes(3) ? 3 : null;
+      ordenanza.sub4 = arr.includes(4) ? 4 : null;
+      ordenanza.sub5 = arr.includes(5) ? 5 : null;
+      ordenanza.sub6 = arr.includes(6) ? 6 : null;
+      ordenanza.sub7 = arr.includes(7) ? 7 : null;
+      ordenanza.sub8 = arr.includes(8) ? 8 : null;
+      ordenanza.sub9 = arr.includes(9) ? 9 : null;
+      ordenanza.sub10 = arr.includes(10) ? 10 : null;
+      ordenanza.sub11 = arr.includes(11) ? 11 : null;
+      ordenanza.sub12 = arr.includes(12) ? 12 : null;
+      ordenanza.sub13 = arr.includes(13) ? 13 : null;
+      ordenanza.sub14 = arr.includes(14) ? 14 : null;
+      ordenanza.sub15 = arr.includes(15) ? 15 : null;
+      ordenanza.sub16 = arr.includes(16) ? 16 : null;
+      ordenanza.sub17 = arr.includes(17) ? 17 : null;
+      ordenanza.sub18 = arr.includes(18) ? 18 : null;
+      ordenanza.sub19 = arr.includes(19) ? 19 : null;
+      ordenanza.sub20 = arr.includes(20) ? 20 : null;
+      ordenanza.sub21 = arr.includes(21) ? 21 : null;
+      ordenanza.sub22 = arr.includes(22) ? 22 : null;
+      ordenanza.sub23 = arr.includes(23) ? 23 : null;
+      ordenanza.sub24 = arr.includes(24) ? 24 : null;
+      ordenanza.sub25 = arr.includes(25) ? 25 : null;
+      ordenanza.sub26 = arr.includes(26) ? 26 : null;
+      ordenanza.sub27 = arr.includes(27) ? 27 : null;
+    }
     console.log(ordenanza);
     res.json(ordenanza);
   })
