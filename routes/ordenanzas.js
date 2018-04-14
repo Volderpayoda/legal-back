@@ -20,7 +20,8 @@ router.get("/", function(req, res, next){
   'from sub_ordenanza, subsecretaria ' +
   'where sub_ordenanza.id_subsecretaria = subsecretaria.id_subsecretaria ' +
   'group by sub_ordenanza.nro_actsimple) as lista ' +
-  'on ordenanza.nro_actsimple = lista.nro_act_simple ';
+  'on ordenanza.nro_actsimple = lista.nro_act_simple ' +
+  'order by ordenanza.nro_actsimple' ;
   /*var text = 'select * from ordenanzas, (select "subs_ordenanzas"."_idOrdenanza", string_agg("subsecretaria"."nombreSubsecretaria", ' + separador + ') as subsecretaria ' + 
   'from subs_ordenanzas, subsecretaria ' +
   'where "subs_ordenanzas"."_idSubsecretaria" = "subsecretaria"."idSubsecretaria" ' +
