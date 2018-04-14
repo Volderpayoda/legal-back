@@ -89,14 +89,14 @@ router.get("/:nro_actsimple", function (req, res, next) {
       return;
     }
     var ordenanza = {
-      nroOrdenanza: results.rows[0].nroOrdenanza,
+      nro_ordenanza: results.rows[0].nro_ordenanza,
       tema: results.rows[0].tema,
       promulgacion: results.rows[0].promulgacion,
-      fechaPromulgacion: results.rows[0].fechaPromulgacion,
-      nroPromulgacion: results.rows[0].nroPromulgacion,
+      fecha_promulgacion: results.rows[0].fecha_promulgacion,
+      nro_promulgacion: results.rows[0].nro_promulgacion,
       observacion: results.rows[0].observacion,
-      nroActSimple: results.rows[0].nroActSimple,
-      presento: results.rows[0].presento,
+      nro_actsimple: results.rows[0].nro_actsimple,
+      origen: results.rows[0].origen,
       sub1: null,
       sub2: null,
       sub3: null,
@@ -125,7 +125,7 @@ router.get("/:nro_actsimple", function (req, res, next) {
       sub26: null,
       sub27: null,
     }
-    var arr = results.rows[0].sub;
+    var arr = results.rows[0].arreglo;
     ordenanza.sub1 = arr.includes(1) ? 1 : null;
     ordenanza.sub2 = arr.includes(2) ? 2 : null;
     ordenanza.sub3 = arr.includes(3) ? 3 : null;
