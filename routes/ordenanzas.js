@@ -75,14 +75,14 @@ router.post("/", function (req, res, next) {
   })
 });
 
-router.get("/:nroActSimple", function (req, res, next) {
-  var nroActSimple = req.params.nroActSimple;
+router.get("/:nro_actsimple", function (req, res, next) {
+  var nro_actsimple = req.params.nro_actsimple
   //var text = 'select * from ordenanzas where "nroActSimple" = $1';
-  var text = 'select * from ordenanzas, ' +
-  '(select array_agg("_idSubsecretaria") as sub from subs_ordenanzas ' +
-  'where "subs_ordenanzas"."nroActSimple"=$1) as arreglo ' +
-  'where ordenanzas."nroActSimple" = $1'
-  var params = [nroActSimple];
+  var text = 'select * from ordenanza, ' +
+  '(select array_agg("id_subsecretaria") as sub from sub_ordenanza ' +
+  'where sub_ordenanza.nro_actsimple= $1) as arreglo ' +
+  'where ordenanza.nro_actsimple = $1'
+  var params = [nro_actsimple];
   db.query(text, params, function(err, results){
     if (err) {
       next(err);
@@ -153,9 +153,9 @@ router.get("/:nroActSimple", function (req, res, next) {
     ordenanza.sub25 = arr.includes(25) ? 25 : null;
     ordenanza.sub26 = arr.includes(26) ? 26 : null;
     ordenanza.sub27 = arr.includes(27) ? 27 : null;
+    console.log(ordenanza);
     res.json(ordenanza);
   })
-  db.query
 });
 
 router.delete("/:id", function (req, res, next) {

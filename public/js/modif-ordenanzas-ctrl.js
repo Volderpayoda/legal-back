@@ -1,6 +1,6 @@
 app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
-    $scope.buscarOrdenanza = function(nroActSimple) {
-    $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nroActSimple)
+    $scope.buscarOrdenanza = function(nro_actsimple) {
+    $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nro_actsimple)
    .then(function(response){
        $scope.ordenanza = response.data; 
        $scope.var = true;
