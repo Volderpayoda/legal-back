@@ -155,7 +155,7 @@ router.get("/:nro_actsimple", function (req, res, next) {
       ordenanza.sub26 = arr.includes(26) ? 26 : null;
       ordenanza.sub27 = arr.includes(27) ? 27 : null;
     }
-    console.log(ordenanza);
+    console.log(results.rows);
     res.json(ordenanza);
   })
 });
