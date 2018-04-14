@@ -125,7 +125,7 @@ router.get("/:nro_actsimple", function (req, res, next) {
       sub26: null,
       sub27: null,
     }
-    if (results.rows.sub != null) {
+    if (results.rows.sub) {
     var arr = results.rows[0].sub;
       ordenanza.sub1 = arr.includes(1) ? 1 : null;
       ordenanza.sub2 = arr.includes(2) ? 2 : null;
