@@ -22,11 +22,6 @@ router.get("/", function(req, res, next){
   'group by sub_ordenanza.nro_actsimple) as lista ' +
   'on ordenanza.nro_actsimple = lista.nro_act_simple ' +
   'order by ordenanza.nro_actsimple' ;
-  /*var text = 'select * from ordenanzas, (select "subs_ordenanzas"."_idOrdenanza", string_agg("subsecretaria"."nombreSubsecretaria", ' + separador + ') as subsecretaria ' + 
-  'from subs_ordenanzas, subsecretaria ' +
-  'where "subs_ordenanzas"."_idSubsecretaria" = "subsecretaria"."idSubsecretaria" ' +
-  'group by "subs_ordenanzas"."_idOrdenanza") as lista ' +
-  'where ordenanzas._id = "lista"."_idOrdenanza"';*/
   db.query(text, function(err, results) {
     if(err) {
       return next(err);
@@ -46,10 +41,6 @@ router.post("/", function (req, res, next) {
   'fecha_promulgacion, tema)' + 
   "values ($1, $2, $3, $4, $5, $6, $7, $8) returning nro_actsimple";
   var params = [ordenanza.nro_actsimple, ordenanza.nro_ordenanza, ordenanza.nro_promulgacion, ordenanza.origen, ordenanza.promulgacion, ordenanza.reglamentada, ordenanza.fecha_promulgacion, ordenanza.tema];
-  /*var text = 'insert into ordenanzas("nroOrdenanza", "tema", "promulgacion", "fechaPromulgacion", "nroPromulgacion", "observacion", "nroActSimple", "presento", "origen", "reglamentada") ' +
-  "values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning _id";
-  var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada];
-  */
   db.query(text, params, function(err, results){
       if (err) {
           next(err);
@@ -60,9 +51,6 @@ router.post("/", function (req, res, next) {
         if(item != null) {
           text = 'insert into sub_ordenanza(nro_actsimple, id_subsecretaria) values ($1, $2)';
           var params = [nro_actsimple, item]
-          /*text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
-          var params = [_id, item];
-          */
           db.query(text, params, function(err, results){
             if (err) {
               next(err);
@@ -77,7 +65,6 @@ router.post("/", function (req, res, next) {
 
 router.get("/:nro_actsimple", function (req, res, next) {
   var nro_actsimple = req.params.nro_actsimple
-  //var text = 'select * from ordenanzas where "nroActSimple" = $1';
   var text = 'select * from ordenanza, ' +
   '(select array_agg("id_subsecretaria") as sub from sub_ordenanza ' +
   'where sub_ordenanza.nro_actsimple= $1) as arreglo ' +
@@ -155,14 +142,13 @@ router.get("/:nro_actsimple", function (req, res, next) {
       ordenanza.sub26 = arr.includes(26) ? 26 : null;
       ordenanza.sub27 = arr.includes(27) ? 27 : null;
     }
-    console.log(results.rows);
     res.json(ordenanza);
   })
 });
 
 router.delete("/:id", function (req, res, next) {
   var _id = req.params.id;
-  var text = 'delete from ordenanzas where _id = $1';
+  var text = 'delete from ordenanza where nro_actimple = $1';
   var params = [_id];
   db.query(text, params, function(err, results){
     if (err){
@@ -174,29 +160,31 @@ router.delete("/:id", function (req, res, next) {
   })
 })
 
-router.put("/:id", function (req, res, next) {
-  var _id = req.params.id;
+router.put("/:nro_actsimple", function (req, res, next) {
+  var nro_actsimple = req.params.nro_actsimple;
   var ordenanza = req.body;
   var text = 'update ordenanzas set ' + 
-      '"nroOrdenanza" = $1, "tema" = $2, "promulgacion" = $3, "fechaPromulgacion" = $4, "nroPromulgacion" = $5, "observacion" = $6, "nroActSimple" = $7, "presento" = $8, "origen" = $9, "reglamentada" = $10' + 
-      'where _id = $11';
-  var params = [ordenanza.nroOrdenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fechaPromulgacion, ordenanza.nroPromulgacion, ordenanza.observacion, ordenanza.nroActSimple, ordenanza.presento, ordenanza.origen, ordenanza.reglamentada, _id];
+      'nro_ordenanza = $1, tema = $2, promulgacion = $3, fecha_promulgacion = $4, nro_promulgacion = $5, origen = $6, reglamentada = $7' + 
+      'where nro_actsimple = $8';
+  var params = [ordenanza.nro_ordenanza, ordenanza.tema, ordenanza.promulgacion, ordenanza.fecha_promulgacion, ordenanza.nro_promulgacion, ordenanza.origen, ordenanza.reglamentada, nro_actsimple];
   db.query(text, params, function(err, results){
     if (err) {
       next(err);
       return err;
     }
-    text = 'delete from subs_ordenanzas where "_idOrdenanza" = $1';
-    params = [_id];
+    console.log('Actualización sobre "ordenanzas" exitosa');
+    text = 'delete from sub_ordenanza where "nro_actsimple" = $1';
+    params = [nro_actsimple];
     db.query(text, params, function(err, results){
       if (err) {
         next(err);
         return;
       }
+      console.log("Eliminación de subsecretarias relacionadas exitosa. Comenzando a insertar ");
       ordenanza.sub.forEach(function(item){
         if(item != null) {
-          text = 'insert into subs_ordenanzas("_idOrdenanza", "_idSubsecretaria") values ($1, $2)';
-          var params = [_id, item];
+          text = 'insert into sub_ordenanza("nro_actsimple", "id_subsecretaria") values ($1, $2)';
+          var params = [nro_actsimple, item];
           db.query(text, params, function(err, results){
             if (err) {
               next(err);
@@ -204,9 +192,10 @@ router.put("/:id", function (req, res, next) {
             }
           })      
         }
-      });      
+      }); 
+      console.log("Inserción exitosa. Proceso de actualización completo.");
+      res.sendStatus(201);    
     })
-    res.sendStatus(201);
   })
 })
 
