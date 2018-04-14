@@ -30,6 +30,7 @@ router.get("/", function(req, res, next){
     if(err) {
       return next(err);
     }
+    Console.log(results.rows);
     res.json(results);
   })
 })
