@@ -16,11 +16,11 @@ router.get("/", function(req, res, next){
   var separador = "'; '";
   var blanco = "' '";
   var text = 'select * from ordenanza left join ' +
-  '(select sub_ordenanza.nro_actsimple, string_agg(subsecretaria.nombre_subsecretaria, ' + separador + ') as subsecretaria ' +
+  '(select sub_ordenanza.nro_actsimple as nro_act_simple, string_agg(subsecretaria.nombre_subsecretaria, ' + separador + ') as subsecretaria ' +
   'from sub_ordenanza, subsecretaria ' +
   'where sub_ordenanza.id_subsecretaria = subsecretaria.id_subsecretaria ' +
   'group by sub_ordenanza.nro_actsimple) as lista ' +
-  'on ordenanza.nro_actsimple = lista.nro_actsimple ';
+  'on ordenanza.nro_actsimple = lista.nro_act_simple ';
   /*var text = 'select * from ordenanzas, (select "subs_ordenanzas"."_idOrdenanza", string_agg("subsecretaria"."nombreSubsecretaria", ' + separador + ') as subsecretaria ' + 
   'from subs_ordenanzas, subsecretaria ' +
   'where "subs_ordenanzas"."_idSubsecretaria" = "subsecretaria"."idSubsecretaria" ' +
