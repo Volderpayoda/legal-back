@@ -47,7 +47,7 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
            ordenanza.sub27
         ]    
        }
-   $http.put("http://volderpayoda.sytes.net/api/ordenanzas/" + ordenanza._id,JSON.stringify(data)).then(function(data){
+   $http.put("http://volderpayoda.sytes.net/api/ordenanzas/" + ordenanza.nro_actsimple,JSON.stringify(data)).then(function(data){
        $state.go('submit')
    }), function(data) {
        $scope.msg="ERROR: No pudimos modificar la ordenanza. Algo falló"
