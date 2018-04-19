@@ -1,5 +1,7 @@
 var express = require("express");
 
+var moment = require('moment');
+
 var db = require("../db/index.js");
 
 var router = express.Router();
@@ -198,5 +200,13 @@ router.put("/:nro_actsimple", function (req, res, next) {
     })
   })
 })
+
+var valDatos = function(ordenanza) {
+  // Validar fecha
+  var date = moment(ordenanza.fecha_promulgacion, "DD-MM-YYYY");
+  if (!date.isValid()) {
+    ordenanza.fecha_promulgacion = null
+  }
+}
 
 module.exports = router;
