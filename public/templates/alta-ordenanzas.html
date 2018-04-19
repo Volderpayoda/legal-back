@@ -1,18 +1,18 @@
 <h1>Añadir ordenanza</h1>
-<form class="formulario">
+<form class="formulario" name="formulario-alta">
     <fieldset>
         <div class="form-horizontal">
             <div class="col-md-12">
                 <label>Número de Actuación Simple: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.nro_actsimple" placeholder="Ejemplo: "/>
+                <input class="form-control" name="nro_actsimple" type="text" ng-model="ordenanza.nro_actsimple" placeholder="Ejemplo: "/>
             </div>
             <div class="col-md-12">
                 <label>Número de Ordenanza: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.nro_ordenanza" placeholder="Ejemplo: "/>
+                <input class="form-control" name="nro_ordenanza" type="text" ng-model="ordenanza.nro_ordenanza" placeholder="Ejemplo: "/>
             </div>
             <div class="col-md-12">
                 <label>Tema: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.tema" placeholder="Ejemplo: "/>
+                <input class="form-control" name="tema" type="text" ng-model="ordenanza.tema" placeholder="Ejemplo: "/>
             </div>
             <div class="col-md-12">
                 <label>Estado: </label>
@@ -27,10 +27,15 @@
                     <span class="glyphicon glyphicon-calendar"></span>
                   </span>
                 </div>
+                <script type="text/javascript">
+                  $(function (){
+                    $('#fecha_promulgacion').datetimepicker();
+                  });
+                </script>
             </div>
             <div class="col-md-12">
                 <label>Número de Resolución de Promulgación: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.nro_promulgacion" placeholder="Ejemplo: "/>
+                <input class="form-control" name="nro_promulgacion" type="text" ng-model="ordenanza.nro_promulgacion" placeholder="Ejemplo: "/>
             </div>
             <div class="col-md-12">
                 <label>Reglamentada: </label>
@@ -242,9 +247,3 @@
   </fieldset>
 </form>
 <p></p>
-
-<script type="text/javascript">
-  $(function (){
-    $('#fecha_promulgacion').datetimepicker();
-  });
-</script>
