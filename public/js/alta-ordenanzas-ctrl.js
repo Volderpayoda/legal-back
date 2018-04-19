@@ -2,7 +2,7 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.ordenanza = {};
     $scope.postdata = function(ordenanza) {
         
-      /*  var data = {
+      var data = {
             nro_ordenanza: ordenanza.nro_ordenanza, 
             tema: ordenanza.tema, 
             promulgacion: ordenanza.promulgacion, 
@@ -20,7 +20,7 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
                 ordenanza.sub19, ordenanza.sub20, ordenanza.sub21,
                 ordenanza.sub22, ordenanza.sub23, ordenanza.sub24,
                 ordenanza.sub25, ordenanza.sub26, ordenanza.sub27,]
-        };*/
+        };
     
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(ordenanza))
         .then(function(ordenanza){
