@@ -202,7 +202,7 @@ router.put("/:nro_actsimple", function (req, res, next) {
 
 var valDatos = function(ordenanza) {
   // Validar fecha
-  var date = moment(ordenanza.fecha_promulgacion, "DD/MM/YYYY");
+  var date = moment(ordenanza.fecha_promulgacion);
   if (!date.isValid()) {
     console.log("Fecha invalida")
     ordenanza.fecha_promulgacion = null
