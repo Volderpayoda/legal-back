@@ -12,6 +12,10 @@ var valDatos = function(req, res, next) {
   if (!date.isValid()) {
     res.sendStatus(500);
   }
+  if (!req.body.sub) {
+    res.sendStatus(500);
+  }
+  console.log('Los datos recibios son válidos')
   next();
 }
 
@@ -42,9 +46,6 @@ router.get("/", function(req, res, next){
 
 router.post("/", valDatos(req, res, next), function (req, res, next) {
   var ordenanza = req.body;
-  console.log(req.body);
-  valDatos(ordenanza);
-  console.log(req.body);
   var _id;
   var text = 'insert into ordenanza' +
   '(nro_actsimple, nro_ordenanza, nro_promulgacion, origen, promulgacion, reglamentada, ' +
@@ -207,7 +208,5 @@ router.put("/:nro_actsimple", valDatos(req, res, next), function (req, res, next
     })
   })
 })
-
-
 
 module.exports = router;
