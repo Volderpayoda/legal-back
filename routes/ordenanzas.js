@@ -28,16 +28,15 @@ router.get("/", function(req, res, next){
     if(err) {
       return next(err);
     }
-    console.log(results.rows);
     res.json(results);
   })
 })
 
 router.post("/", function (req, res, next) {
   var ordenanza = req.body;
+  console.log(req.body);
   valDatos(ordenanza);
-  console.log(req.body)
-  console.log(req.body.sub[0]);
+  console.log(req.body);
   var _id;
   var text = 'insert into ordenanza' +
   '(nro_actsimple, nro_ordenanza, nro_promulgacion, origen, promulgacion, reglamentada, ' +
@@ -158,7 +157,6 @@ router.delete("/:id", function (req, res, next) {
       next(err);
       return;
     }
-    console.log(results);
     res.sendStatus(201);
   })
 })
@@ -206,6 +204,7 @@ var valDatos = function(ordenanza) {
   // Validar fecha
   var date = moment(ordenanza.fecha_promulgacion, "DD/MM/YYYY");
   if (!date.isValid()) {
+    console.log("Fecha invalida")
     ordenanza.fecha_promulgacion = null
   }
 }
