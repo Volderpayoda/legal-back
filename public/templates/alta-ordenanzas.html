@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <label>Número de Actuación Simple: </label>
                 <input class="form-control" name="nro_actsimple" type="text" ng-model="ordenanza.nro_actsimple" placeholder="Ejemplo: " required/>
-                
+                <span ng-show="!formulario-alta.$pristine && formulario-alta.nro_actsimple.$error.required">Se requiere el número de actuación simple</span>
             </div>
             <div class="col-md-12">
                 <label>Número de Ordenanza: </label>
