@@ -21,7 +21,12 @@
             </div>
             <div class="col-md-12">
                 <label>Fecha de Promulgación: </label>
-                <input class="form-control" type="text" datetime="yyyy-MM-dd HH:mm:ss" ng-model="ordenanza.fecha_promulgacion" placeholder="Ejemplo: 12/04/2017"/>
+                <div class='input-group date' id='fecha_promulgacion'>
+                  <input class="form-control" type="text" ng-model="ordenanza.fecha_promulgacion" placeholder="Día/Mes/Año">
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
             </div>
             <div class="col-md-12">
                 <label>Número de Resolución de Promulgación: </label>
@@ -238,3 +243,8 @@
 </form>
 <p></p>
 
+<script type="text/javascript">
+  $(function (){
+    $('#fecha_promulgacion').datetimepicker();
+  });
+</script>
