@@ -19,7 +19,7 @@
                 <div><label class="radio-inline"><input type="radio" value="Promulgada" ng-model="ordenanza.promulgacion" >Promulgada</label></div>
                 <div><label class="radio-inline"><input type="radio" value="Vetada" ng-model="ordenanza.promulgacion">Vetada</label></div>
             </div>
-            <div class="col-md-12">
+            <!--<div class="col-md-12">
                 <label>Fecha de Promulgación: </label>
                 <div class='input-group date' id='fecha_promulgacion'>
                   <input class="form-control" type="text" ng-model="ordenanza.fecha_promulgacion" placeholder="Día/Mes/Año">
@@ -27,7 +27,7 @@
                     <span class="glyphicon glyphicon-calendar"></span>
                   </span>
                 </div>
-            </div>
+            </div>-->
             <div class="col-md-12">
                 <label>Número de Resolución de Promulgación: </label>
                 <input class="form-control" name="nro_promulgacion" type="text" ng-model="ordenanza.nro_promulgacion" placeholder="Ejemplo: "/>
@@ -242,3 +242,24 @@
   </fieldset>
 </form>
 <p></p>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    locale: 'ru'
+                });
+            });
+        </script>
+    </div>
+</div>
