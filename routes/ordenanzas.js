@@ -35,6 +35,7 @@ router.get("/", function(req, res, next){
 
 router.post("/", function (req, res, next) {
   var ordenanza = req.body;
+  valDatos(ordenanza);
   console.log(req.body)
   console.log(req.body.sub[0]);
   var _id;
