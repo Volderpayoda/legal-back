@@ -9,7 +9,6 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.13.0",
     "express-session": "^1.10.1",
-    "forever": "^0.15.3",
     "moment": "^2.22.1",
     "mongoose": "4.10.8",
     "passport": "^0.2.1",
