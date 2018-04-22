@@ -1,250 +1,222 @@
 <h1>Añadir ordenanza</h1>
 <form class="formulario" name="formulario-alta" ng-submit="postdata(ordenanza)">
-    <fieldset>
-        <div class="form-horizontal">
-            <div class="col-md-12">
-                <label>Número de Actuación Simple: </label>
-                <input class="form-control" name="nro_actsimple" type="text" ng-model="ordenanza.nro_actsimple" placeholder="Ejemplo: " required/>
-            </div>
-            <div class="col-md-12">
-                <label>Número de Ordenanza: </label>
-                <input class="form-control" name="nro_ordenanza" type="text" ng-model="ordenanza.nro_ordenanza" placeholder="Ejemplo: "/>
-            </div>
-            <div class="col-md-12">
-                <label>Tema: </label>
-                <input class="form-control" name="tema" type="text" ng-model="ordenanza.tema" placeholder="Ejemplo: "/>
-            </div>
-            <div class="col-md-12">
-                <label>Estado: </label>
-                <div><label class="radio-inline"><input type="radio" value="Promulgada" ng-model="ordenanza.promulgacion" >Promulgada</label></div>
-                <div><label class="radio-inline"><input type="radio" value="Vetada" ng-model="ordenanza.promulgacion">Vetada</label></div>
-            </div>
-            <div class="col-md-12">
-                <label>Fecha de Promulgación: </label>
-                <input class="form-control" type="date" ng-model="ordenanza.fecha_promulgacion" placeholder="Día/Mes/Año">
-            </div>
-            </div>
-            <div class="col-md-12">
-                <label>Número de Resolución de Promulgación: </label>
-                <input class="form-control" name="nro_promulgacion" type="text" ng-model="ordenanza.nro_promulgacion" placeholder="Ejemplo: "/>
-            </div>
-            <div class="col-md-12">
-                <label>Reglamentada: </label>
-                <div><label class="radio-inline"><input type="radio" value="Si" ng-model="ordenanza.reglamentada">Si</label></div>
-                <div><label class="radio-inline"><input type="radio" value="No" ng-model="ordenanza.reglamentada">No</label></div>
-            </div>
-            <div class="col-md-12">
-              <label>Seleccione Subsecretarías:</label>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de ambiente
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub1" ng-true-value="1">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Salud Ambiental</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub2" ng-true-value="2">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Higiene Urbana</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub3" ng-true-value="3">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Administración de Recursos Hídricos</label>
-                    </div>
-                </div> 
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de cultura, turismo y deporte
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub4" ng-true-value="4">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Cultura e Identidad Local</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub5" ng-true-value="5">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Turismo</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub6" ng-true-value="6">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Deporte</label>
-                    </div>
-                </div>  
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de desarrollo económico
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub7" ng-true-value="7">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Empleo y Capacitación</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub8" ng-true-value="8">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Innovación y Desarrollo Local</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub9" ng-true-value="9">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Industria, Comercio y Defensa del Consumidor y Usuario</label>
-                    </div>
-                </div>
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de economía
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub10" ng-true-value="10">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Hacienda y Presupuesto</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub11" ng-true-value="11">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Finanzas e Ingresos Públicos</label>
-                    </div>
-                </div>
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de espacio público e infraestructura
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub12" ng-true-value="12">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Arquitectura y Movilidad Urbana</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub13" ng-true-value="13">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Mantenimiento y Uso del Espacio Público</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub14" ng-true-value="14">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Descentralización de Servicios Barriales</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub15" ng-true-value="15">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Control y Fiscalización de Obras Urbanas</label>
-                    </div>
-                </div>
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría general
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub16" ng-true-value="16">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Medios y Prensa</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub17" ng-true-value="17">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Legal y Técnica</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub18" ng-true-value="18">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Relaciones Institucionales</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub19" ng-true-value="19">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Desarrollo Humano e Inclusión Social</label>
-                    </div>
-                </div>
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría gobierno
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub20" ng-true-value="20">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Emergencia y Defensa Civil</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub21" ng-true-value="21">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Justicia y Seguridad Ciudadana</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub22" ng-true-value="22">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Transporte</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub23" ng-true-value="23">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Mujer y Familia</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub24" ng-true-value="24">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Gobierno y Regularización Dominial</label>
-                    </div>
-                </div>
-                <p></p>
-                <div class="subsecretaria">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de planificación estratégica
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub25" ng-true-value="25">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Planificación Urbana</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub26" ng-true-value="26">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Información y Estadísticas</label>
-                    </div>
-                    <div class="checkbox">    
-                      <label class="">
-                      <input type="checkbox" ng-model="ordenanza.sub27" ng-true-value="27">
-                      <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                      Subsecretaría de Control y Modernización del Estado</label>
-                    </div>
-                </div>
-            </div>
+  <fieldset>
+    <div class="form-horizontal">
+      <div class="col-md-12">
+        <label>Número de Actuación Simple: </label>
+        <input class="form-control" name="nro_actsimple" type="text" ng-model="ordenanza.nro_actsimple" placeholder="Ejemplo: " required/>
+      </div>
+      <div class="col-md-12">
+        <label>Número de Ordenanza: </label>
+        <input class="form-control" name="nro_ordenanza" type="text" ng-model="ordenanza.nro_ordenanza" placeholder="Ejemplo: "/>
+      </div>
+      <div class="col-md-12">
+        <label>Tema: </label>
+        <input class="form-control" name="tema" type="text" ng-model="ordenanza.tema" placeholder="Ejemplo: "/>
+      </div>
+      <div class="col-md-12">
+        <label>Estado: </label>
+        <div><label class="radio-inline"><input type="radio" value="Promulgada" ng-model="ordenanza.promulgacion" >Promulgada</label></div>
+        <div><label class="radio-inline"><input type="radio" value="Vetada" ng-model="ordenanza.promulgacion">Vetada</label></div>
+      </div>
+      <div class="col-md-12">
+        <label>Fecha de Promulgación: </label>
+        <input class="form-control" type="date" ng-model="ordenanza.fecha_promulgacion" placeholder="Día/Mes/Año">
+      </div>
+      <div class="col-md-12">
+        <label>Número de Resolución de Promulgación: </label>
+        <input class="form-control" name="nro_promulgacion" type="text" ng-model="ordenanza.nro_promulgacion" placeholder="Ejemplo: "/>
+      </div>
+      <div class="col-md-12">
+        <label>Reglamentada: </label>
+        <div><label class="radio-inline"><input type="radio" value="Si" ng-model="ordenanza.reglamentada">Si</label></div>
+        <div><label class="radio-inline"><input type="radio" value="No" ng-model="ordenanza.reglamentada">No</label></div>
+      </div>
+      <div class="col-md-12">
+        <label>Seleccione Subsecretarías:</label>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de ambiente
+          <div class="checkbox">    
+            <label class="">
+              <input type="checkbox" ng-model="ordenanza.sub1" ng-true-value="1">
+              <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Salud Ambiental</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub2" ng-true-value="2">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Higiene Urbana</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub3" ng-true-value="3">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Administración de Recursos Hídricos</label>
+          </div>
+        </div> 
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de cultura, turismo y deporte
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub4" ng-true-value="4">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Cultura e Identidad Local</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub5" ng-true-value="5">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Turismo</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub6" ng-true-value="6">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Deporte</label>
+          </div>
+        </div>  
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de desarrollo económico
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub7" ng-true-value="7">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Empleo y Capacitación</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub8" ng-true-value="8">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Innovación y Desarrollo Local</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub9" ng-true-value="9">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Industria, Comercio y Defensa del Consumidor y Usuario</label>
+          </div>
         </div>
-    <p></p>
-    <div class="col-md-12">
-      <div class="alert alert-success col-md-12" ng-show="successAlert" role="alert">
-        <h1 class="alert-heading">¡Ordenanza añadida exitosamente!</h1>
-        <hr>
-        <p>Podes seguir agregando</p>
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de economía
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub10" ng-true-value="10">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Hacienda y Presupuesto</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub11" ng-true-value="11">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Finanzas e Ingresos Públicos</label>
+          </div>
+        </div>
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de espacio público e infraestructura
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub12" ng-true-value="12">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Arquitectura y Movilidad Urbana</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub13" ng-true-value="13">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Mantenimiento y Uso del Espacio Público</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub14" ng-true-value="14">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Descentralización de Servicios Barriales</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub15" ng-true-value="15">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Control y Fiscalización de Obras Urbanas</label>
+          </div>
+        </div>
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría general
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub16" ng-true-value="16">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Medios y Prensa</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub17" ng-true-value="17">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Legal y Técnica</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub18" ng-true-value="18">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Relaciones Institucionales</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub19" ng-true-value="19">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Desarrollo Humano e Inclusión Social</label>
+          </div>
+        </div>
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría gobierno
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub20" ng-true-value="20">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Emergencia y Defensa Civil</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub21" ng-true-value="21">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Justicia y Seguridad Ciudadana</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub22" ng-true-value="22">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Transporte</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub23" ng-true-value="23">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Mujer y Familia</label>
+          </div>
+          <div class="checkbox">    
+            <label class="">
+            <input type="checkbox" ng-model="ordenanza.sub24" ng-true-value="24">
+            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Gobierno y Regularización Dominial</label>
+          </div>
+        </div>
+        </br>
+        <div class="subsecretaria">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-chevron-right"></i></span>Secretaría de planificación estratégica
+          <div class="checkbox">    
+          <label class="">
+          <input type="checkbox" ng-model="ordenanza.sub25" ng-true-value="25">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Planificación Urbana</label>
+        </div>
+        <div class="checkbox">    
+          <label class="">
+          <input type="checkbox" ng-model="ordenanza.sub26" ng-true-value="26">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Información y Estadísticas</label>
+        </div>
+        <div class="checkbox">    
+          <label class="">
+          <input type="checkbox" ng-model="ordenanza.sub27" ng-true-value="27">
+          <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Subsecretaría de Control y Modernización del Estado</label>
+        </div>
       </div>
-      <div class="alert alert-danger col-md-12" ng-show="dangerAlert" role="alert">
-        <h1 class="alert-heading">¡Ordenanza no añadida!</h1>
-        <hr>
-        <p>Cuidado, revisa cuidadosamente los datos que ingresaste. Quizás la ordenanza ya existe</p>
-      </div>
-      <input class="botonEnviar" type="submit" value="Enviar"/>     
     </div>
-  </fieldset>
+  </div>
+  </br>
+  <div class="col-md-12">
+    <div class="alert alert-success col-md-12" ng-show="successAlert" role="alert">
+    <h1 class="alert-heading">¡Ordenanza añadida exitosamente!</h1>
+      <hr>
+      <p>Podes seguir agregando</p>
+    </div>
+    <div class="alert alert-danger col-md-12" ng-show="dangerAlert" role="alert">
+      <h1 class="alert-heading">¡Ordenanza no añadida!</h1>
+      <hr>
+      <p>Cuidado, revisa cuidadosamente los datos que ingresaste. Quizás la ordenanza ya existe</p>
+    </div>
+    <input class="botonEnviar" type="submit" value="Enviar"/>     
+  </div>
+</fieldset>
 </form>
-<p></p>
+</br>
 
