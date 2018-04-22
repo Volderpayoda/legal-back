@@ -45,6 +45,7 @@ label {
 
 .img-home {
   text-align:center;
+  border-radius: 5px;
 }
 .home-header {
   border-radius: 5px;
