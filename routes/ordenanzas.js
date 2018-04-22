@@ -85,6 +85,9 @@ router.get("/:nro_actsimple", function (req, res, next) {
       next(err);
       return;
     }
+    if (results.rows.length == 0) {
+      return res.end();
+    }
     var ordenanza = {
       nro_ordenanza: results.rows[0].nro_ordenanza,
       tema: results.rows[0].tema,
