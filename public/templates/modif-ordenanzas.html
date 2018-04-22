@@ -7,19 +7,19 @@
           <i class="glyphicon glyphicon-search"></i>
         </button>
       </span>
-      <div class="alert alert-danger col-md-12" ng-show="dangerAlert" role="alert">
-          <h1 class="alert-heading">¡Ordenanza no encontrada!</h1>
-          <hr>
-          <p>Cuidado, revisa cuidadosamente los datos que ingresaste</p>
-      </div>
-      <div class="alert alert-danger col-md-12" ng-show="infoAlert" role="alert">
-          <h1 class="alert-heading">¡Estamos en problemas!</h1>
-          <hr>
-          <p>Tenemos un problema en nuestros servidores. Volve a intentar</p>
-      </div>
-        
-    </div>
   </div>
+<div class="alert alert-danger col-md-12" ng-show="dangerAlert" role="alert">
+      <h1 class="alert-heading">¡Ordenanza no encontrada!</h1>
+      <hr>
+      <p>Cuidado, revisa cuidadosamente los datos que ingresaste</p>
+</div>
+<div class="alert alert-danger col-md-12" ng-show="infoAlert" role="alert">
+      <h1 class="alert-heading">¡Estamos en problemas!</h1>
+      <hr>
+      <p>Tenemos un problema en nuestros servidores. Volve a intentar</p>
+</div>
+    
+</div>
 <form class="formulario" align="center" ng-show="var" ng-submit="put(ordenanza)">
     <fieldset>
         <div class="form-horizontal">
