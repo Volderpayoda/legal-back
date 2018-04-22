@@ -27,7 +27,6 @@ router.get("/", function(req, res, next){
     if(err) {
       return next(err);
     }
-    console.log(results)
     res.json(results);
   })
 })
@@ -74,8 +73,9 @@ router.get("/:nro_actsimple", function (req, res, next) {
       next(err);
       return;
     }
-    if (results.rows.length == 0) {
-      return res.end();
+    if (results.rowCount == 0) {
+      return res.sendStatus(404);
+      console.log(res);
     }
     var ordenanza = {
       nro_ordenanza: results.rows[0].nro_ordenanza,
