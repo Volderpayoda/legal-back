@@ -76,6 +76,7 @@ router.get("/:nro_actsimple", function (req, res, next) {
     if (results.rowCount == 0) {
       res.sendStatus(404);
       console.log(res);
+      return;
     }
     var ordenanza = {
       nro_ordenanza: results.rows[0].nro_ordenanza,
