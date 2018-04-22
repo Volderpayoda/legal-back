@@ -3,13 +3,13 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
     $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nro_actsimple)
    .then(function(response){
        if (response.status == 404) {
-            $state.go('submit');
+            
         } else {
             $scope.ordenanza = response.data; 
             $scope.var = true;
         }
    }, function(response){
-       $scope.ordenanza = "ERROR: Algo falló";
+    $state.go('submit');
    });
 };
    $scope.put =  function(ordenanza) {
