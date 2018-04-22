@@ -1,7 +1,8 @@
 app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.ordenanza = {};
     $scope.postdata = function(ordenanza) {
-        
+    $scope.successAlert=false;
+    $scope.dangerAlert=false;    
     var data = {
         nro_ordenanza: ordenanza.nro_ordenanza, 
         tema: ordenanza.tema, 
