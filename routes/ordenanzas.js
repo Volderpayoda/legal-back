@@ -41,6 +41,7 @@ router.post("/", function (req, res, next) {
   var params = [ordenanza.nro_actsimple, ordenanza.nro_ordenanza, ordenanza.nro_promulgacion, ordenanza.origen, ordenanza.promulgacion, ordenanza.reglamentada, ordenanza.fecha_promulgacion, ordenanza.tema];
   db.query(text, params, function(err, results){
       if (err) {
+          console.log(err)
           next(err);
           return;
       }
