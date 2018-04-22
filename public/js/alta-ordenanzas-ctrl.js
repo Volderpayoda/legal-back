@@ -24,7 +24,8 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data))
         .then(function(data){
-            $scope.successAlert=true;    
+            $scope.successAlert=true;
+            $scope.ordenanza={};    
         }, function(data){
             $scope.dangerAlert=true;
         })
