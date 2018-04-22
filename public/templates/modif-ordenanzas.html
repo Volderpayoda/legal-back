@@ -9,7 +9,7 @@
       </span>
     </div>
   </div>
-<form class="formulario" align="center" ng-show="var">
+<form class="formulario" align="center" ng-show="var" ng-submit="put(ordenanza)">
     <fieldset>
         <div class="form-horizontal">
             <div class="col-md-12">
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-12">
                 <label>Fecha de Promulgación: </label>
-                <input class="form-control" type="text" ng-model="ordenanza.fecha_promulgacion" value="{{ordenanza.fecha_promulgacion}}"/>
+                <input class="form-control" type="date" ng-model="ordenanza.fecha_promulgacion" value="{{ordenanza.fecha_promulgacion}}"/>
             </div>
             <div class="col-md-12">
                     <label>Poder que la presenta: </label>
@@ -241,7 +241,7 @@
         </div>
     <p></p>
     <div class="col-md-12">
-      <input class="botonEnviar" ui-sref="submit" type="button" value="Modificar" ng-click="put(ordenanza)"/> 
+      <input class="botonEnviar" type="submit" value="Modificar"/> 
     </div>
   </fieldset>
 </form>

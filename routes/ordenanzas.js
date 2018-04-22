@@ -6,20 +6,11 @@ var db = require("../db/index.js");
 
 var router = express.Router();
 
-var valDatos = function(req, res, next) {
-  // Validar fecha
-  var date = moment(req.body.fecha_promulgacion);
-  if (!date.isValid()) {
-    res.sendStatus(500);
-  }
-  next();
-}
-
 router.all('*', function(req, res, next){
   if(req.user) {
     next();
   } else {
-    res.sendStatus(403)
+    res.sendStatus(403);
   }
 })
 
@@ -40,11 +31,8 @@ router.get("/", function(req, res, next){
   })
 })
 
-router.post("/", valDatos(req, res, next), function (req, res, next) {
+router.post("/", function (req, res, next) {
   var ordenanza = req.body;
-  console.log(req.body);
-  valDatos(ordenanza);
-  console.log(req.body);
   var _id;
   var text = 'insert into ordenanza' +
   '(nro_actsimple, nro_ordenanza, nro_promulgacion, origen, promulgacion, reglamentada, ' +
@@ -172,7 +160,7 @@ router.delete("/:id", function (req, res, next) {
   })
 })
 
-router.put("/:nro_actsimple", valDatos(req, res, next), function (req, res, next) {
+router.put("/:nro_actsimple", function (req, res, next) {
   var nro_actsimple = req.params.nro_actsimple;
   var ordenanza = req.body;
   var text = 'update ordenanza set ' + 
@@ -210,7 +198,5 @@ router.put("/:nro_actsimple", valDatos(req, res, next), function (req, res, next
     })
   })
 })
-
-
 
 module.exports = router;

@@ -1,5 +1,5 @@
 <h1>Añadir ordenanza</h1>
-<form class="formulario" name="formulario-alta">
+<form class="formulario" name="formulario-alta" ng-submit="postdata(ordenanza)">
     <fieldset>
         <div class="form-horizontal">
             <div class="col-md-12">
@@ -233,7 +233,7 @@
     <p></p>
     <div class="col-md-12">
       <p>{{msg}}</p>
-      <input class="botonEnviar" type="button" value="Enviar" ng-click="postdata(ordenanza)"/>     
+      <input class="botonEnviar" type="submit" value="Enviar"/>     
     </div>
   </fieldset>
 </form>
