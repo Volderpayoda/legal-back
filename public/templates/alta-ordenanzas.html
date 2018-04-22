@@ -232,7 +232,16 @@
         </div>
     <p></p>
     <div class="col-md-12">
-      <div class="alert alert-success col-md-12" ng-show="successAlert" role="alert">¡Ordenanza añadida exitosamente!</div>
+      <div class="alert alert-success col-md-12" ng-show="successAlert" role="alert">
+        <h1 class="alert-heading">¡Ordenanza añadida exitosamente!</h1>
+        <hr>
+        <p>Podes seguir agregando</p>
+      </div>
+      <div class="alert alert-danger col-md-12" ng-show="dangerAlert" role="alert">
+        <h1 class="alert-heading">¡Ordenanza no añadida!</h1>
+        <hr>
+        <p>Cuidado, revisa cuidadosamente los datos que ingresaste. Quizás la ordenanza ya existe</p>
+      </div>
       <input class="botonEnviar" type="submit" value="Enviar"/>     
     </div>
   </fieldset>

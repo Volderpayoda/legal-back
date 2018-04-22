@@ -1,7 +1,8 @@
 app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.ordenanza = {};
     $scope.postdata = function(ordenanza) {
-        
+    $scope.successAlert=false;
+    $scope.dangerAlert=false;    
     var data = {
         nro_ordenanza: ordenanza.nro_ordenanza, 
         tema: ordenanza.tema, 
@@ -25,7 +26,8 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
     $http.post("http://volderpayoda.sytes.net/api/ordenanzas", JSON.stringify(data))
         .then(function(data){
             $scope.successAlert=true;
-            $('#formulario').reset();    
-        }), function(data){
-        $scope.msg = "ERROR: No pudimos enviar tu ordenanza"}
+            $scope.ordenanza={};    
+        }, function(data){
+            $scope.dangerAlert=true;
+        })
 }});
