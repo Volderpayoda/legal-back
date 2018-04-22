@@ -2,14 +2,15 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.buscarOrdenanza = function(nro_actsimple) {
     $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nro_actsimple)
    .then(function(response){
-       if (response.status == 404) {
-            
-        } else {
-            $scope.ordenanza = response.data; 
-            $scope.var = true;
-        }
+        $scope.ordenanza = response.data; 
+        $scope.var = true;
    }, function(response){
-    $state.go('submit');
+       if (response.status == 404) {
+           $state.go('submit');
+           //tratar no se encontró
+       } else {
+           //tratar error
+       }
    });
 };
    $scope.put =  function(ordenanza) {
