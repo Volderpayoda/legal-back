@@ -252,6 +252,16 @@
         </div>
     <p></p>
     <div class="col-md-12">
+        <div class="alert alert-success col-md-12" ng-show="successAlert" role="alert">
+            <h1 class="alert-heading">¡Ordenanza modificada exitosamente!</h1>
+              <hr>
+              <p>Podes seguir modificando</p>
+            </div>
+            <div class="alert alert-danger col-md-12" ng-show="dangerAlertSend" role="alert">
+              <h1 class="alert-heading">¡Ordenanza no añadida!</h1>
+              <hr>
+              <p>Cuidado, revisa cuidadosamente los datos que ingresaste.</p>
+            </div>
       <input class="botonEnviar" type="submit" value="Modificar"/> 
     </div>
   </fieldset>

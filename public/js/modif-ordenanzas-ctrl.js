@@ -15,6 +15,8 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
    });
 };
    $scope.put =  function(ordenanza) {
+       $scope.dangerAlertSend = false;
+       $scope.successAlert = false; 
        var data = {
        nro_ordenanza: ordenanza.nro_ordenanza, 
        tema: ordenanza.tema, 
@@ -54,9 +56,10 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
         ]    
        }
    $http.put("http://volderpayoda.sytes.net/api/ordenanzas/" + ordenanza.nro_actsimple,JSON.stringify(data)).then(function(data){
-       $state.go('submit')
+       $scope.successAlert=true;
+       $scope.ordenanza = {};
    }), function(data) {
-       $scope.msg="ERROR: No pudimos modificar la ordenanza. Algo falló"
+       $scope.dangerAlertSend = true;
    }
    }
     });
