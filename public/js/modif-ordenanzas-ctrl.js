@@ -1,5 +1,6 @@
 app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
     $scope.buscarOrdenanza = function(nro_actsimple) { 
+        $scope.successAlert = false;
         $scope.dangerAlert=false;
         $scope.infoAlert=false;
     $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nro_actsimple)
@@ -15,8 +16,9 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
    });
 };
    $scope.put =  function(ordenanza) {
-       $scope.dangerAlertSend = false;
-       $scope.successAlert = false; 
+        $scope.successAlert = false;
+        $scope.dangerAlert=false;
+        $scope.infoAlert=false; 
        var data = {
        nro_ordenanza: ordenanza.nro_ordenanza, 
        tema: ordenanza.tema, 
