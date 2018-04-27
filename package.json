@@ -1,8 +1,9 @@
 {
   "name": "legal",
   "version": "0.0.0",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "rm -rf node_modules && npm install && nodejs server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
