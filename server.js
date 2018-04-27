@@ -39,6 +39,6 @@ app.use("/api/usuarios", usuarios);
 // serving Angular app
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(80, function () {
+app.listen(8080, function () {
     console.log("Servidor iniciado");
 });
