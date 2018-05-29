@@ -3,7 +3,7 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
         $scope.successAlert = false;
         $scope.dangerAlert=false;
         $scope.infoAlert=false;
-    $http.get("http://volderpayoda.sytes.net/api/ordenanzas/"+nro_actsimple)
+    $http.get("http://wae.sytes.net/api/ordenanzas/"+nro_actsimple)
    .then(function(response){
         $scope.ordenanza = response.data; 
         $scope.var = true;
@@ -57,7 +57,7 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
            ordenanza.sub27
         ]    
        }
-   $http.put("http://volderpayoda.sytes.net/api/ordenanzas/" + ordenanza.nro_actsimple,JSON.stringify(data)).then(function(data){
+   $http.put("http://wae.sytes.net/api/ordenanzas/" + ordenanza.nro_actsimple,JSON.stringify(data)).then(function(data){
        $scope.successAlert=true;
        $scope.ordenanza = {};
    }), function(data) {

@@ -21,7 +21,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             password: password
         };
         // enviar un "POST" al servidor
-        $http.post("http://volderpayoda.sytes.net/api/usuarios/login", JSON.stringify(data))
+        $http.post("http://wae.sytes.net/api/usuarios/login", JSON.stringify(data))
         .then(function(response){
             if (response.status === 200){
                 user = true;
@@ -40,7 +40,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
     }
 
     function getUserStatus() {
-        return $http.get('http://volderpayoda.sytes.net/api/usuarios/status')
+        return $http.get('http://wae.sytes.net/api/usuarios/status')
         .then(function(response){
             if(response.data.status) {
                 user = true;
@@ -58,7 +58,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
         var deferred = $q.defer();
 
         // send a get request to the server
-        $http.get('http://volderpayoda.sytes.net/api/usuarios/logout')
+        $http.get('http://wae.sytes.net/api/usuarios/logout')
         // manejar exito
         .then(function (data) {
             user = false;
