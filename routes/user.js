@@ -4,9 +4,9 @@ var Account = require('../models/account');
 var router = express.Router();
 
 router.post('/register', function(req, res){
+    console.log(process.env.SOMESECRET)
+    console.log(req.body)
     if (req.body.secret != process.env.SOMESECRET) {
-        console.log(req.body.secret)
-        console.log(process.env.SOMESECRET)
         return res.sendStatus(403);
     }
     Account.register(new Account({ username: req.body.username}), req.body.password, function(err, account) {
