@@ -1,4 +1,4 @@
-app.factory('AuthService', function ($q,$timeout,$http) {
+app.factory('AuthService', function ($q,$timeout,$http, $location) {
   
     // crear variable "usuario"
     var user = null;
@@ -21,7 +21,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             password: password
         };
         // enviar un "POST" al servidor
-        $http.post("http://wae.sytes.net/api/usuarios/login", JSON.stringify(data))
+        $http.post($location.protocol() + "://" + $location.host(), JSON.stringify(data))
         .then(function(response){
             if (response.status === 200){
                 user = true;
