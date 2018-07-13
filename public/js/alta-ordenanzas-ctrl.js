@@ -23,7 +23,7 @@ app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state, direccion
                 ordenanza.sub25, ordenanza.sub26, ordenanza.sub27,]
         };
     
-    $http.post("http://wae.sytes.net/api/ordenanzas", JSON.stringify(data))
+    $http.post(direccion, JSON.stringify(data))
         .then(function(data){
             $scope.successAlert=true;
             $scope.ordenanza={};    
