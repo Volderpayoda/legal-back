@@ -1,5 +1,5 @@
 var app =angular.module("legal",['ui.router']);
-
+app.constant('direccion', 'http://wae.sytes.net/api/ordenanzas')
 app.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
     .state('login', {

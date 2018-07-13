@@ -1,4 +1,4 @@
-app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state) {
+app.controller("alta-ordenanzas-ctrl", function($scope, $http, $state, direccion) {
     $scope.ordenanza = {};
     $scope.postdata = function(ordenanza) {
     $scope.successAlert=false;
