@@ -1,4 +1,4 @@
-app.factory('AuthService', function ($q,$timeout,$http, $location) {
+app.factory('AuthService', function ($q,$timeout,$http) {
   
     // crear variable "usuario"
     var user = null;
@@ -21,7 +21,7 @@ app.factory('AuthService', function ($q,$timeout,$http, $location) {
             password: password
         };
         // enviar un "POST" al servidor
-        $http.post($location.protocol() + "://" + $location.host(), JSON.stringify(data))
+        $http.post($location.protocol() + "://" + location.host() + "/api/usuarios/login", JSON.stringify(data))
         .then(function(response){
             if (response.status === 200){
                 user = true;
@@ -40,7 +40,7 @@ app.factory('AuthService', function ($q,$timeout,$http, $location) {
     }
 
     function getUserStatus() {
-        return $http.get($location.protocol() + "://" + $location.host() + "/usuarios/status")
+        return $http.get($location.protocol() + "://" + location.host() + '/api/usuarios/status')
         .then(function(response){
             if(response.data.status) {
                 user = true;
@@ -58,7 +58,7 @@ app.factory('AuthService', function ($q,$timeout,$http, $location) {
         var deferred = $q.defer();
 
         // send a get request to the server
-        $http.get($location.protocol() + "://" + $location.host() + "/usuarios/logout")
+        $http.get($location.protocol() + "://" + location.host() + '/api/usuarios/logout')
         // manejar exito
         .then(function (data) {
             user = false;
