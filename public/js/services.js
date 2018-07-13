@@ -40,7 +40,7 @@ app.factory('AuthService', function ($q,$timeout,$http, $location) {
     }
 
     function getUserStatus() {
-        return $http.get('http://wae.sytes.net/api/usuarios/status')
+        return $http.get($location.protocol() + "://" + $location.host() + "/usuarios/status")
         .then(function(response){
             if(response.data.status) {
                 user = true;
@@ -58,7 +58,7 @@ app.factory('AuthService', function ($q,$timeout,$http, $location) {
         var deferred = $q.defer();
 
         // send a get request to the server
-        $http.get('http://wae.sytes.net/api/usuarios/logout')
+        $http.get($location.protocol() + "://" + $location.host() + "/usuarios/logout")
         // manejar exito
         .then(function (data) {
             user = false;
