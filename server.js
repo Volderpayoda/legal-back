@@ -37,10 +37,8 @@ app.use("/api/ordenanzas", ordenanzas);
 app.use("/api/usuarios", usuarios);
 
 // serving Angular app
-// app.use(express.static(path.join(__dirname, "public")));
-app.get('/', function(req, res){
-    res.sendFile(path.resolve('public/index.html'));
-})
+app.use(express.static(path.join(__dirname, "public")));
+
 
 // Iniciar el servidor
 port = process.env.PORT || 8080;
