@@ -1,5 +1,5 @@
-var app =angular.module("legal",['ui.router']);
-
+var app =angular.module("legal",['ui.router', '$location']);
+app.constant('dominio', $location.protocol() + '://' + $location.host())
 app.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
     .state('login', {

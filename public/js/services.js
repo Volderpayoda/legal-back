@@ -21,7 +21,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
             password: password
         };
         // enviar un "POST" al servidor
-        $http.post($location.protocol() + "://" + location.host() + "/api/usuarios/login", JSON.stringify(data))
+        $http.post(direccion + "/api/usuarios/login", JSON.stringify(data))
         .then(function(response){
             if (response.status === 200){
                 user = true;
@@ -40,7 +40,7 @@ app.factory('AuthService', function ($q,$timeout,$http) {
     }
 
     function getUserStatus() {
-        return $http.get($location.protocol() + "://" + location.host() + '/api/usuarios/status')
+        return $http.get(direccion + '/api/usuarios/status')
         .then(function(response){
             if(response.data.status) {
                 user = true;
