@@ -1,5 +1,5 @@
-app.controller("ordenanzas-ctrl", function($scope, $http) {
-    $http.get("http://wae.sytes.net/api/ordenanzas")
+app.controller("ordenanzas-ctrl", function($scope, $http, direccion) {
+    $http.get(direccion + "/api/ordenanzas")
      .then(function(response){
          $scope.ordenanzas = response.data.rows; 
      }, function(response){

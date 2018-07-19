@@ -1,9 +1,9 @@
-app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
+app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state, direccion) {
     $scope.buscarOrdenanza = function(nro_actsimple) { 
         $scope.successAlert = false;
         $scope.dangerAlert=false;
         $scope.infoAlert=false;
-    $http.get("http://wae.sytes.net/api/ordenanzas/"+nro_actsimple)
+    $http.get(direccion + "/api/ordenanzas/"+nro_actsimple)
    .then(function(response){
         $scope.ordenanza = response.data; 
         $scope.var = true;
@@ -57,7 +57,7 @@ app.controller("modif-ordenanzas-ctrl", function($scope, $http, $state) {
            ordenanza.sub27
         ]    
        }
-   $http.put("http://wae.sytes.net/api/ordenanzas/" + ordenanza.nro_actsimple,JSON.stringify(data)).then(function(data){
+   $http.put(direccion + "/api/ordenanzas/" + ordenanza.nro_actsimple,JSON.stringify(data)).then(function(data){
        $scope.successAlert=true;
        $scope.ordenanza = {};
    }), function(data) {

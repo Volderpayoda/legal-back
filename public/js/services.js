@@ -58,7 +58,7 @@ app.factory('AuthService', function ($q,$timeout,$http, direccion) {
         var deferred = $q.defer();
 
         // send a get request to the server
-        $http.get($location.protocol() + "://" + location.host() + '/api/usuarios/logout')
+        $http.get(direccion + '/api/usuarios/logout')
         // manejar exito
         .then(function (data) {
             user = false;
