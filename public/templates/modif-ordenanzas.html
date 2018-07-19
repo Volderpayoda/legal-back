@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-12">
                 <label>Fecha de Promulgación: </label>
-                <input class="form-control" type="date" ng-model="ordenanza.fecha_promulgacion" value="{{ordenanza.fecha_promulgacion}}"/>
+                <input class="form-control" type="date" ng-model="ordenanza.fecha_promulgacion" value="{{ordenanza.fecha_promulgacion | date: 'dd/MM/yyyy'}}"/>
             </div>
             <div class="col-md-12">
                     <label>Poder que la presenta: </label>
